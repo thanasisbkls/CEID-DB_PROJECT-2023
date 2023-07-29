@@ -37,7 +37,7 @@ create table if not exists worker(
     wrk_lame varchar(20) default 'unknown' not null,
     wrk_salary float(7,2) not null,
     wrk_br_code int(11) not null ,
-	PRIMARY KEY(wrk_AT),
+	PRIMARY KEY (wrk_AT, wrk_br_code), #Ένας εργαζόμενος εργάζεται σε ένα μόνο υποκατάστημα
 	constraint workerBranch foreign key (wrk_br_code) references branch(br_code)
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
