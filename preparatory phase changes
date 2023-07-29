@@ -1,0 +1,42 @@
+1. 	Changed primary key on worker table because a worker is uniquely
+	described by his id and the branch that he works for.
+
+2.	Kept only first 10 brances instead of 30. Better for testing. Allowed by 	 the project's requirments.
+
+3.	3 phone numbers per branch now instead of 1. Made new inserts.
+
+4.	Kept 60 records for the workers table. Changed the branch codes
+	accordingly
+
+	1-10 -> guides
+	11-20 -> drivers
+	21-30 -> admin (ADMINISTRATIVE)!!! Ένα υποκατάστημα διοικείται 		
+										υποχρεωτικά από έναν διοικητικό 
+										υπάλληλο που ανήκει στην κατηγορία ‘ADMINISTRATIVE’. 
+	31-40 -> admin(ACCOUNTING)
+	41-50 -> admin(LOGISTICS)
+
+
+	Now each branch has 1 admin per type!!! 
+
+	We have 10 extra workers to spare!!!
+
+
+5. 	Fixed manages table's inserts
+
+
+
+
+
+
+
+######## tested ########
+
+- branch
+- phones
+- worker
+- guides
+- drivers
+- admins 
+- destinations
+- manages
