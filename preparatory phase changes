@@ -25,6 +25,11 @@
 5. 	Fixed manages table's inserts
 
 
+6.	Fixed trip inserts. Every trip for each branch has the same guide and 		driver. 1 guide and 1 driver per branch!
+
+7.	In event table removed auto increment on ev_tr_id
+	Each event corresponds to one trip
+	Each trip has 1 event except trip 1 and trip 2 that have 2
 
 
 
@@ -40,3 +45,7 @@
 - admins 
 - destinations
 - manages
+- trip
+- event
+- reservations
+- travelto
