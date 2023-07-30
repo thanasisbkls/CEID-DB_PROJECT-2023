@@ -664,7 +664,6 @@ BEGIN
   -- If the employee is a branch manager, display a message and exit the procedure
   IF @is_manager > 0 THEN
     #SELECT concat(first_name, ' ', last_name, ' is the manager of a branch and cannot be deleted.') AS result;
-    IF
     select 'null';
   ELSE
     -- If the employee is not a branch manager, delete the corresponding row from the admin table
@@ -674,3 +673,35 @@ BEGIN
     select 'not null';
   END IF;
 END$
+
+delimiter ;
+
+#PROCEDURES 4.1 4.2
+#drop index idx on reservation_offers;
+CREATE INDEX idx ON reservation_offers (res_deposit, res_lname);
+
+drop procedure if exists deposit_range_names;
+delimiter $
+
+create procedure deposit_range_names(IN minDeposit INT , IN maxDeposit INT)
+BEGIN
+    select res_name,res_lname from reservation_offers where res_deposit>=minDeposit and res_deposit <=maxDeposit;
+end $
+delimiter ;
+
+drop procedure if exists data_last_name;
+delimiter $
+
+create procedure data_last_name(IN lastName VARCHAR(20))
+BEGIN
+    select res_name, res_lname,offers.*  from offers inner join reservation_offers on offers.offer_id = reservation_offers.offer_id_trip
+    where reservation_offers.res_lname = lastName;
+
+    if found_rows()>1 then
+        select offers.*,count(res_lname) from offers
+        inner join reservation_offers on offers.offer_id = reservation_offers.offer_id_trip
+        where reservation_offers.res_lname = lastName
+        group by offer_id;
+    end if;
+end $
+delimiter ;

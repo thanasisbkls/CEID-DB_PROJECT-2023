@@ -13,12 +13,22 @@
 	call showAvailableTrips(1, '2021-01-01', '2022-03-12');
 
 
-3.	delete admin procedure has an issue. Deletes only workers that are not 		any kind of admin. It should delete admin that are not of type 				ADMINISTRATIVE (!???)
+3.	delete admin procedure has an issue. Deletes only workers that are not 		any kind of admin. It should delete admin that are not of type 					ADMINISTRATIVE (!???)
 
 	every branch mandatorily has an admin of type ADMINISTRATIVE => each branch has at least one admin.
+
+
+4.	procedure 4 seems to work fine
+	added a reservation offer to test it further: 100000	testThanasis	testBakalis	1	120
+
+	call data_last_name('Kent');
+	call data_last_name('testBakalis');
+
 
 
 ######## tested ########
 
 - newDriverAssignment
 - showAvailableTrips
+- deposit_range_names
+- data_last_name
