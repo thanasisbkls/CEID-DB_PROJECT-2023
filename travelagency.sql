@@ -570,4 +570,107 @@ insert into offers values
 (null, '2023-05-01', '2024-05-25', 400, 3);
 
 
+#Procedures
 
+#FIRST PROCEDURE
+drop procedure if exists newDriverAssignment;
+DELIMITER $
+
+CREATE PROCEDURE newDriverAssignment(drvAT char(10), drvName varchar(20), drvLname varchar(30),
+ drvSalary float(7,2), drvLicense enum('A', 'B', 'C', 'D'), drvRoute enum('LOCAL', 'ABROAD'), drvExperience tinyint(4))
+BEGIN
+    declare BRANCH_CODE int;
+
+    select br_code into BRANCH_CODE
+    from branch
+    inner join worker on branch.br_code = worker.wrk_br_code
+    inner join driver on worker.wrk_AT = driver.drv_AT
+    group by br_code
+    order by count(drv_AT) asc limit 1;
+
+    insert into worker values(drvAT, drvName, drvLname, drvSalary, BRANCH_CODE);
+    insert into driver values(drvAT, drvLicense, drvRoute, drvExperience);
+
+END$
+
+delimiter ;
+
+#SECOND PROCEDURE
+drop procedure if exists showAvailableTrips;
+delimiter $
+
+create procedure showAvailableTrips(brCode int(11), startDate date, endDate date)
+begin
+    declare not_found int;
+    declare tripId int(11);
+    declare tripCost float(7,2);
+    declare maxSeats tinyint(4);
+    declare reservCount tinyint(4);
+    declare emptySeats tinyint(4);
+    declare drivLname varchar(20);
+    declare drivName varchar(20);
+    declare GuideLname varchar(20);
+    declare GuideName varchar(20);
+    declare guideAT char(10);
+    declare driverAt char(10);
+    declare departureDate datetime;
+    declare returnDate datetime;
+
+    declare tcursor cursor for
+    select tr_id, tr_departure, tr_return, tr_maxseats, tr_cost, tr_gui_AT, tr_drv_AT
+    from trip
+    where tr_br_code = brCode and tr_departure >= startDate and tr_departure <= endDate;
+
+    declare continue handler for not found set not_found=1;
+
+    set not_found=0;
+    open tcursor;
+
+    repeat
+        fetch tcursor into tripId, departureDate, returnDate, maxSeats, tripCost, guideAT, driverAt;
+        if(not_found=0) then
+            select count(res_tr_id) into reservCount from reservation where res_tr_id = tripId;
+            set emptySeats = maxSeats - reservCount;
+            select wrk_lame, wrk_name into GuideLname, GuideName from worker where wrk_AT = guideAT;
+            select wrk_lame, wrk_name into drivLname, drivName from worker where wrk_AT = driverAt;
+
+            select tripCost, maxSeats, reservCount, emptySeats, drivLname,
+                drivName, GuideLname, GuideName, departureDate, returnDate;
+        else
+            select null; #why?
+        end if;
+    until (not_found=1)
+    end repeat;
+
+    close tcursor;
+end $
+
+DELIMITER ;
+
+#THIRD PROCEDURE
+drop procedure if exists delete_admin;
+DELIMITER $
+
+CREATE PROCEDURE delete_admin(IN first_name VARCHAR(20), IN last_name VARCHAR(20))
+BEGIN
+    -- check if employee is a manager and his/her admin type.
+
+  -- Check if the employee is a branch manager
+  SELECT COUNT(*) INTO @is_manager
+  FROM manages
+  INNER JOIN worker ON manages.mng_adm_AT = worker.wrk_AT
+  WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
+
+  -- If the employee is a branch manager, display a message and exit the procedure
+  IF @is_manager > 0 THEN
+    #SELECT concat(first_name, ' ', last_name, ' is the manager of a branch and cannot be deleted.') AS result;
+    IF
+    select 'null';
+  ELSE
+    -- If the employee is not a branch manager, delete the corresponding row from the admin table
+    DELETE admin FROM admin
+    INNER JOIN worker ON admin.adm_AT = worker.wrk_AT
+    WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
+    select 'not null';
+  END IF;
+END$
