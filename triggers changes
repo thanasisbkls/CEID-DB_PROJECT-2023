@@ -1,0 +1,10 @@
+1.	$ show triggers; 	to see all the triggers
+
+2. 	$ call getItID('AT000051', '1234', @token);	adds a record to templogin. to login as a it officer and set (out) variable itID to the AT 
+	inserted if the credentials belong to an it officer. Otherwise it does nothing. 
+
+
+######## tested ########
+- first set of triggers
+- changeDateAndCost
+- changeWorkerSalary

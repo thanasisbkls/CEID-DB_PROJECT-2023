@@ -181,6 +181,10 @@ create table if not exists log(
     on delete cascade on update cascade
 );
 
+drop table if exists templogin;
+create table templogin(
+    tempID char(10) primary key
+);
 
 INSERT INTO branch VALUES
 (1, 1, 'Main Street', 'New York'),
@@ -718,6 +722,340 @@ BEGIN
         inner join reservation_offers on offers.offer_id = reservation_offers.offer_id_trip
         where reservation_offers.res_lname = lastName
         group by offer_id;
+    end if;
+end $
+delimiter ;
+
+#procedure to get id for triggers
+drop procedure if exists getItID;
+delimiter $
+create procedure getItID(in insertedItId char(10), in insertedItPass char(10), out itID char(10))
+begin
+    declare verificationValue char(10);
+
+    select it_AT into verificationValue from itOfficer where it_AT = insertedItId and password = insertedItPass;
+    if (verificationValue is not null) then
+        select insertedItId into itID;
+        insert into templogin values(insertedItId);
+    end if;
+end $
+
+#TRIGGRES
+
+#first set of triggers
+drop trigger if exists tripInsertion;
+delimiter $
+create trigger tripInsertion after insert on trip
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Inserted a trip',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+end $
+delimiter ;
+
+
+drop trigger if exists tripUpdating;
+delimiter $
+create trigger tripUpdating after update on trip
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Updated a trip.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists tripDeletion;
+delimiter $
+create trigger tripDeletion after delete on trip
+for each row
+begin
+
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Deleted a trip.',log_ID_AT=@loginID,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+
+drop trigger if exists reservationInsertion;
+delimiter $
+create trigger reservationInsertion after insert on reservation
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Inserted a reservation.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+end $
+delimiter ;
+
+drop trigger if exists reservationUpdating;
+delimiter $
+create trigger reservationUpdating after update on reservation
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Updated a reservation.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists reservationDeletion;
+delimiter $
+create trigger reservationDeletion after delete on reservation
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Deleted a reservation.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists eventInsertion;
+delimiter $
+create trigger eventInsertion after insert on event
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Inserted an event.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+end $
+delimiter ;
+
+drop trigger if exists eventUpdating;
+delimiter $
+create trigger eventUpdating after update on event
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Updated an event.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists eventDeletion;
+delimiter $
+create trigger eventDeletion after delete on event
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Deleted an event.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists traveltoInsertion;
+delimiter $
+create trigger traveltoInsertion after insert on travelTo
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Inserted a travelto.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+end $
+delimiter ;
+
+drop trigger if exists traveltoUpdating;
+delimiter $
+create trigger traveltoUpdating after update on travelTo
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Updated a travelto.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists traveltoDeletion;
+delimiter $
+create trigger traveltoDeletion after delete on travelTo
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Deleted a travelto.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists destinationInsertion;
+delimiter $
+create trigger destinationInsertion after insert on destination
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Inserted a destination.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+end $
+delimiter ;
+
+drop trigger if exists destinationUpdating;
+delimiter $
+create trigger destinationUpdating after update on destination
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Updated a destination.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+drop trigger if exists destinationDeletion;
+delimiter $
+create trigger destinationDeletion after delete on destination
+for each row
+begin
+    declare testvalue char(10);
+    select tempID into testvalue from templogin;
+    if(testvalue is not null) then
+        insert into log
+        set logdescrc = 'Deleted a destination.',log_ID_AT=testvalue,log_date=now();
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
+    end if;
+
+end $
+delimiter ;
+
+#second trigger
+drop trigger if exists changeDateAndCost;
+
+delimiter $
+
+create trigger changeDateAndCost before update on trip
+for each row
+begin
+    declare tempSeatsValue int;
+
+    select count(*) into tempSeatsValue
+    from trip
+    inner join reservation r on trip.tr_id = r.res_tr_id
+    where tr_id=new.tr_id
+    group by res_tr_id;
+
+    if(tempSeatsValue>0) then
+        if(new.tr_cost <> old.tr_cost) then
+            signal sqlstate value '45000'
+            set message_text = 'You can not change the cost for this trip';
+        end if;
+        if(new.tr_departure <> old.tr_departure) then
+            signal sqlstate value '45000'
+            set message_text = 'You can not change the departure date for this trip';
+        end if;
+        if(new.tr_return <> old.tr_return) then
+            signal sqlstate value '45000'
+            set message_text = 'You can not change the return date for this trip';
+
+        end if;
+    end if;
+end $
+delimiter ;
+
+#third trigger
+drop trigger if exists changeWorkerSalary;
+
+delimiter $
+
+create trigger changeWorkerSalary before update on worker
+for each row
+begin
+    if(new.wrk_salary<old.wrk_salary) then
+        signal sqlstate value '45000'
+        set message_text = 'Τhere can be no reduction in the workers salary';
     end if;
 end $
 delimiter ;
