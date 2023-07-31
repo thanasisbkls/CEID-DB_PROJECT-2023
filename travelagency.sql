@@ -654,24 +654,40 @@ DELIMITER $
 CREATE PROCEDURE delete_admin(IN first_name VARCHAR(20), IN last_name VARCHAR(20))
 BEGIN
     -- check if employee is a manager and his/her admin type.
-
-  -- Check if the employee is a branch manager
-  SELECT COUNT(*) INTO @is_manager
-  FROM manages
-  INNER JOIN worker ON manages.mng_adm_AT = worker.wrk_AT
-  WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
-
-  -- If the employee is a branch manager, display a message and exit the procedure
-  IF @is_manager > 0 THEN
-    #SELECT concat(first_name, ' ', last_name, ' is the manager of a branch and cannot be deleted.') AS result;
-    select 'null';
-  ELSE
-    -- If the employee is not a branch manager, delete the corresponding row from the admin table
-    DELETE admin FROM admin
-    INNER JOIN worker ON admin.adm_AT = worker.wrk_AT
+    SELECT COUNT(*) INTO @is_manager
+    FROM manages
+    INNER JOIN worker ON manages.mng_adm_AT = worker.wrk_AT
     WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
-    select 'not null';
-  END IF;
+
+     -- If the employee is a branch manager
+    IF @is_manager > 0 THEN
+        SELECT wrk_AT INTO @AT
+        from worker
+        INNER JOIN manages on manages.mng_adm_AT = wrk_AT
+        WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
+
+        -- And if he/she is of type ADMINISTRATIVE
+        SELECT count(*) INTO @is_administrative
+        from admin
+        where admin.adm_AT = @AT AND admin.adm_type = 'ADMINISTRATIVE';
+
+        -- Cannot be deleted
+        IF @is_administrative > 0 THEN
+        SELECT concat(first_name, ' ', last_name, 'with AT:', @AT, ' is an administrator of a branch and cannot be deleted.') AS result;
+
+        -- Else delete
+        ELSE
+            DELETE admin FROM admin
+            INNER JOIN worker ON admin.adm_AT = worker.wrk_AT
+            WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
+            select concat(first_name, ' ', last_name, ' ', 'with AT: ', @AT, 'deleted successfully');
+            #select 'not null';
+        END IF;
+
+    -- Employee is not a manager
+    ELSE
+        select concat(first_name, ' ', last_name, ' ', 'with AT: ', @AT, 'is not a manager.');
+    END IF;
 END$
 
 delimiter ;

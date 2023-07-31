@@ -13,9 +13,14 @@
 	call showAvailableTrips(1, '2021-01-01', '2022-03-12');
 
 
-3.	delete admin procedure has an issue. Deletes only workers that are not 		any kind of admin. It should delete admin that are not of type 					ADMINISTRATIVE (!???)
+3.	FIXED!!! (delete admin procedure has an issue. Deletes only workers that are not any kind of admin. It should delete admin that are not of type 						ADMINISTRATIVE (!???))
+	Now deletes only admins not of type ADMINISTRATIVE. Does not delete any other worker.
 
 	every branch mandatorily has an admin of type ADMINISTRATIVE => each branch has at least one admin.
+
+	call delete_admin('Tina', 'Taylor');
+	call delete_admin('George', 'Baknis');
+	call delete_admin('John', 'Doe');
 
 
 4.	procedure 4 seems to work fine
@@ -30,5 +35,6 @@
 
 - newDriverAssignment
 - showAvailableTrips
+- delete_admin
 - deposit_range_names
 - data_last_name
