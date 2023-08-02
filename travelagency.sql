@@ -1058,4 +1058,102 @@ begin
         set message_text = 'Τhere can be no reduction in the workers salary';
     end if;
 end $
+DELIMITER ;
+
+drop procedure if exists showBranchDetails;
+
+delimiter $
+CREATE PROCEDURE showBranchDetails(brCode INT)
+BEGIN
+  SELECT 'Branch Details' AS 'Result Type', br_code AS 'Code', br_num AS 'Number', br_street AS 'Street', br_city AS 'City'
+  FROM branch
+  WHERE brCode = br_code
+  UNION
+  SELECT 'Administrative Workers' AS 'Result Type', wrk_name AS 'First Name', wrk_lame AS 'Last Name', NULL, NULL
+  FROM worker
+  INNER JOIN admin on adm_AT = worker.wrk_AT
+  WHERE adm_type = 'administrative' && worker.wrk_br_code = brCode
+  UNION
+  SELECT 'Number of Reservations' AS 'Result Type', COUNT(*) AS 'Number of Reservations', NULL, NULL, NULL
+  FROM reservation
+  INNER JOIN trip on res_tr_id = trip.tr_id
+  WHERE tr_br_code = brCode
+  UNION
+  SELECT 'Total Cost of Reservations' AS 'Result Type', t.tr_cost * COUNT(r.res_tr_id) AS 'Total Cost of Reservations', NULL, NULL, NULL
+  FROM trip t
+  INNER JOIN reservation r ON res_tr_id = t.tr_id
+  WHERE tr_br_code = brCode;
+END$
+
+delimiter ;
+
+
+drop procedure if exists branchInfo;
+
+delimiter $
+CREATE PROCEDURE branchInfo (brCode INT)
+BEGIN
+  SELECT wrk_name AS 'First Name',
+         wrk_lame AS 'Last Name',
+         wrk_salary AS 'Salary',
+         (SELECT SUM(wrk_salary)
+          FROM worker
+          WHERE wrk_br_code = brCode) AS 'Total Salary'
+  FROM worker
+  WHERE wrk_br_code = brCode;
+END$
+
+delimiter ;
+
+drop procedure if exists showLog;
+
+delimiter $
+CREATE PROCEDURE showLog()
+BEGIN
+    DECLARE not_found INT;
+    DECLARE logD TEXT;
+    DECLARE logID CHAR(10);
+    DECLARE itLname VARCHAR(20);
+    DECLARE logDate DATETIME;
+
+    DECLARE logcursor CURSOR FOR
+    SELECT logdescrc, log_ID_AT, log_date
+    FROM log;
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET not_found = 1;
+
+    SET not_found = 0;
+    OPEN logcursor;
+
+    -- Create a temporary table to store the data
+    CREATE TEMPORARY TABLE temp_log_result (
+        log_desc TEXT,
+        it_lastname VARCHAR(20),
+        log_date DATETIME
+    );
+
+    FETCH_LOOP: LOOP
+        FETCH logcursor INTO logD, logID, logDate;
+        IF not_found = 1 THEN
+            LEAVE FETCH_LOOP;
+        END IF;
+
+        SELECT wrk_lame INTO itLname
+        FROM worker
+        INNER JOIN itOfficer ON worker.wrk_AT = itOfficer.it_AT
+        WHERE wrk_AT = logID;
+
+        INSERT INTO temp_log_result (log_desc, it_lastname, log_date)
+        VALUES (logD, itLname, logDate);
+    END LOOP FETCH_LOOP;
+
+    CLOSE logcursor;
+
+    -- Fetch the complete result set from the temporary table
+    SELECT log_desc, it_lastname, log_date FROM temp_log_result;
+
+    -- Drop the temporary table
+    DROP TEMPORARY TABLE temp_log_result;
+END;
+
 delimiter ;
