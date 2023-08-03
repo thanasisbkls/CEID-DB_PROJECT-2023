@@ -1060,29 +1060,56 @@ begin
 end $
 DELIMITER ;
 
+
 drop procedure if exists showBranchDetails;
 
 delimiter $
 CREATE PROCEDURE showBranchDetails(brCode INT)
 BEGIN
-  SELECT 'Branch Details' AS 'Result Type', br_code AS 'Code', br_num AS 'Number', br_street AS 'Street', br_city AS 'City'
-  FROM branch
-  WHERE brCode = br_code
-  UNION
-  SELECT 'Administrative Workers' AS 'Result Type', wrk_name AS 'First Name', wrk_lame AS 'Last Name', NULL, NULL
-  FROM worker
-  INNER JOIN admin on adm_AT = worker.wrk_AT
-  WHERE adm_type = 'administrative' && worker.wrk_br_code = brCode
-  UNION
-  SELECT 'Number of Reservations' AS 'Result Type', COUNT(*) AS 'Number of Reservations', NULL, NULL, NULL
-  FROM reservation
-  INNER JOIN trip on res_tr_id = trip.tr_id
-  WHERE tr_br_code = brCode
-  UNION
-  SELECT 'Total Cost of Reservations' AS 'Result Type', t.tr_cost * COUNT(r.res_tr_id) AS 'Total Cost of Reservations', NULL, NULL, NULL
-  FROM trip t
-  INNER JOIN reservation r ON res_tr_id = t.tr_id
-  WHERE tr_br_code = brCode;
+    declare not_found int;
+    declare temp_tr_id int;
+    declare temp_cost float(7, 2);
+    declare total_cost float(7, 2);
+
+
+    -- total income from the reservations
+    declare trip_cost_cursor cursor for
+    select tr_cost, tr_id
+    from trip
+    where tr_br_code = brCode;
+
+    declare continue handler for not found set not_found=1;
+
+    set not_found=0;
+    set total_cost=0.0;
+    open trip_cost_cursor;
+
+    repeat
+        fetch trip_cost_cursor INTO temp_cost, temp_tr_id;
+        if(not_found=0) then
+            select count(res_tr_id) * temp_cost
+            from reservation
+            where res_tr_id = temp_tr_id INTO temp_cost;
+
+            set total_cost = total_cost + temp_cost;
+        end if ;
+        until (not_found=1)
+    end repeat ;
+    close trip_cost_cursor;
+
+    -- total number of reservations
+    select COUNT(ALL res_tr_id) INTO @numOfRes
+    from reservation
+    inner join trip t on reservation.res_tr_id = t.tr_id
+    where tr_br_code = brCode;
+
+    SELECT 'Branch Details' AS 'Result Type', br_code AS 'Code', br_num AS 'Number', br_street AS 'Street', br_city AS
+        'City', wrk_name AS 'admin (FN)', wrk_lame AS 'Last name (LN)', @numOfRes AS 'Num of reservations', total_cost AS
+        'Income'
+        FROM branch
+        inner join worker w on branch.br_code = w.wrk_br_code
+        inner join admin a on w.wrk_AT = a.adm_AT
+        WHERE brCode = br_code and adm_type = 'ADMINISTRATIVE';
 END$
 
 delimiter ;
@@ -1093,16 +1120,30 @@ drop procedure if exists branchInfo;
 delimiter $
 CREATE PROCEDURE branchInfo (brCode INT)
 BEGIN
-  SELECT wrk_name AS 'First Name',
-         wrk_lame AS 'Last Name',
-         wrk_salary AS 'Salary',
-         (SELECT SUM(wrk_salary)
-          FROM worker
-          WHERE wrk_br_code = brCode) AS 'Total Salary'
-  FROM worker
-  WHERE wrk_br_code = brCode;
+    SELECT wrk_name AS 'First Name', wrk_lame AS 'Last Name', wrk_salary AS 'Salary'
+    FROM worker
+    WHERE wrk_br_code = brCode;
+
+    SELECT 'Total Salaries' AS 'Result Type', SUM(wrk_salary)
+    FROM worker
+    WHERE wrk_br_code = brCode;
 END$
 
+delimiter ;
+
+drop procedure if exists addIT;
+call addIT('AT111111', 'TestIt', 'TestIt', 3020, 1, 1234, '2023-01-01', null);
+delimiter $
+CREATE PROCEDURE addIT(in wrkAT char(10), in wrkName varchar(20), in wrkLname varchar(20), in wrkSalary float(7, 2),in
+    wrkBrCode int, in password char(10), in startD datetime, in endD datetime)
+BEGIN
+    -- First insert a worker
+    insert into worker values(wrkAT, wrkName, wrkLname, wrkSalary, wrkBrCode);
+
+    -- After insert on itofficer table
+    insert into itOfficer values (wrkAT, password, startD, endD);
+
+END $
 delimiter ;
 
 drop procedure if exists showLog;
