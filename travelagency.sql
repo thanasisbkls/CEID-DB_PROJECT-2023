@@ -1197,3 +1197,118 @@ BEGIN
 END;
 
 delimiter ;
+
+
+-- Extra functionalities
+drop procedure if exists branch_stats;
+
+delimiter $
+CREATE PROCEDURE branch_stats(brCode INT)
+BEGIN
+    declare not_found int;
+    declare temp_tr_id int;
+    declare temp_cost float(7, 2);
+    declare total_cost float(7, 2);
+    declare total_salaries float(13, 2);
+
+    -- total income from the reservations
+    declare trip_cost_cursor cursor for
+    select tr_cost, tr_id
+    from trip
+    where tr_br_code = brCode;
+
+    declare continue handler for not found set not_found=1;
+
+    set not_found=0;
+    set total_cost=0.0;
+    open trip_cost_cursor;
+
+    repeat
+        fetch trip_cost_cursor INTO temp_cost, temp_tr_id;
+        if(not_found=0) then
+            select count(res_tr_id) * temp_cost
+            from reservation
+            where res_tr_id = temp_tr_id INTO temp_cost;
+
+            set total_cost = total_cost + temp_cost;
+        end if ;
+        until (not_found=1)
+    end repeat ;
+    close trip_cost_cursor;
+
+    -- expenses = salaries
+    SELECT SUM(wrk_salary)
+    FROM worker
+    WHERE wrk_br_code = brCode INTO total_salaries;
+
+
+    select total_cost AS 'Income', total_salaries AS 'expenses', total_cost - total_salaries AS 'Turnover';
+
+END $
+
+
+drop procedure if exists driver_card;
+
+delimiter $
+CREATE PROCEDURE driver_card(id char(10))
+BEGIN
+   -- id
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", id AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+        "Salary", drv_license AS "License", drv_route AS "Route", drv_experience AS "Experience"
+    from worker
+    inner join driver on drv_AT = worker.wrk_AT
+    where wrk_AT = id;
+
+   -- assigned trips
+    select tr_id AS "Trip Id", tr_departure AS "departure", tr_return AS "Return"
+    from trip
+    where tr_drv_AT = id;
+
+END $
+
+
+drop procedure if exists guide_card;
+
+delimiter $
+CREATE PROCEDURE guide_card(id char(10))
+BEGIN
+   -- id
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", id AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+        "Salary"
+    from worker
+    inner join guide on guide.gui_AT = worker.wrk_AT
+    where wrk_AT = id;
+
+    -- languages
+    select lng_language
+    from languages
+    where lng_gui_AT = id;
+
+    -- assigned trips
+    select tr_id AS "Trip Id", tr_departure AS "departure", tr_return AS "Return"
+    from trip
+    where tr_gui_AT = id;
+
+   -- guide cv
+    select gui_cv AS "CV"
+    from guide
+    where gui_AT = id;
+
+END $
+
+
+drop procedure if exists admin_card;
+
+delimiter $
+CREATE PROCEDURE admin_card(id char(10))
+BEGIN
+   -- id
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", id AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+        "Salary", adm_type AS "Type", adm_diploma AS 'Diploma'
+    from worker
+    inner join admin on admin.adm_AT = worker.wrk_AT
+    where wrk_AT = id;
+
+
+END $
+
