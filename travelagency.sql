@@ -351,7 +351,7 @@ INSERT INTO languages VALUES
 ('AT000007', 'Portuguese'),
 ('AT000008', 'Italian'),
 ('AT000009', 'Greek'),
-('AT0000010', 'French');
+('AT000010', 'French');
 
 INSERT INTO driver VALUES
 ('AT000011', 'B', 'LOCAL', 5),
@@ -1132,7 +1132,6 @@ END$
 delimiter ;
 
 drop procedure if exists addIT;
-call addIT('AT111111', 'TestIt', 'TestIt', 3020, 1, 1234, '2023-01-01', null);
 delimiter $
 CREATE PROCEDURE addIT(in wrkAT char(10), in wrkName varchar(20), in wrkLname varchar(20), in wrkSalary float(7, 2),in
     wrkBrCode int, in password char(10), in startD datetime, in endD datetime)
