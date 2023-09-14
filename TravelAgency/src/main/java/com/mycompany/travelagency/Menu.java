@@ -31,9 +31,9 @@ public class Menu extends javax.swing.JFrame {
             
             //here sonoo is database name, root is username and password
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
-                
+//                Class.forName("com.mysql.jdbc.Driver");
+//                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 /*Branch*/
                 Statement stmt=con.createStatement();
                 ResultSet rs=stmt.executeQuery("select * from branch");
@@ -2883,9 +2883,9 @@ public class Menu extends javax.swing.JFrame {
         jComboBox4.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
-            
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from admin");
             DefaultTableModel tbModel = (DefaultTableModel)jTable8.getModel();
@@ -2927,9 +2927,9 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(branchesPanel).setVisible(true);
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
-            
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from branch");
             DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
@@ -2965,9 +2965,9 @@ public class Menu extends javax.swing.JFrame {
             String insertBranchCommand = "INSERT INTO branch VALUES (" + br_code + "," + br_num +  "," + "'"  + br_street + "','" + br_city  + "'); " ;
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
-
+//                Class.forName("com.mysql.jdbc.Driver");
+//                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertBranchCommand);
                 
@@ -2991,8 +2991,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteBranchCommand = "delete from branch where br_code= " + br_code + ";"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+           Connection con = ConnectionToDb.connectMySqlDB();
 
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteBranchCommand);
@@ -3036,8 +3035,7 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(destinationsPanel).setVisible(true);
         
         try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
         
                 Statement stmt=con.createStatement();
                 ResultSet rs=stmt.executeQuery("select * from destination");
@@ -3077,8 +3075,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox6.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from driver");
@@ -3122,8 +3119,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox15.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from event");
@@ -3164,8 +3160,7 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(guidesPanel).setVisible(true);
         jComboBox7.removeAllItems();
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+           Connection con = ConnectionToDb.connectMySqlDB();
 
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from guide");
@@ -3208,8 +3203,7 @@ public class Menu extends javax.swing.JFrame {
         
         jComboBox3.removeAllItems();
         try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 
                 Statement stmt=con.createStatement();
                 ResultSet rs=stmt.executeQuery("select * from itOfficer");
@@ -3254,8 +3248,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox10.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
         
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from languages");
@@ -3298,8 +3291,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox9.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
         
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from manages");
@@ -3350,8 +3342,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox16.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from offers");
@@ -3393,8 +3384,7 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(phonesPanel).setVisible(true);
         jComboBox3.removeAllItems();
         try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 
                 Statement stmt=con.createStatement();
                 ResultSet rs=stmt.executeQuery("select * from phones");
@@ -3439,8 +3429,7 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(reservationsPanel).setVisible(true);
         jComboBox14.removeAllItems();
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from reservation");
@@ -3484,8 +3473,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox18.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+           Connection con = ConnectionToDb.connectMySqlDB();
         
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from reservation_offers");
@@ -3531,8 +3519,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox13.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
 
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from trip");
@@ -3598,8 +3585,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox2.removeAllItems();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from worker");
@@ -3633,7 +3619,7 @@ public class Menu extends javax.swing.JFrame {
         catch(Exception e){ System.out.println(e);} 
         
     }//GEN-LAST:event_jMenuItem15ActionPerformed
-
+    
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         // TODO add your handling code here:
         dataMenuPanel.setVisible(false);
@@ -3644,8 +3630,7 @@ public class Menu extends javax.swing.JFrame {
         branchesMenuPanel.add(branchInfoPanel).setVisible(true);
         jComboBox1.removeAllItems();
         try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 
                 /*Branch*/
                 Statement stmt=con.createStatement();
@@ -3688,8 +3673,7 @@ public class Menu extends javax.swing.JFrame {
         String procedureBrDetails = "call showBranchDetails(" + selectedItem + ")";
         
         try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 
                 Statement stmt=con.createStatement();
                 ResultSet rs=stmt.executeQuery( procedureData );
@@ -3765,8 +3749,7 @@ public class Menu extends javax.swing.JFrame {
             String procedureShowAvailableTrips = "call showAvailableTrips(" + brCode + "," + " \" " + startDate + " \" " + ","  + " \" " + endDate +  " \" " + ")";
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 
                 //Statement stmt = con.createStatement();
                 //ResultSet rs = stmt.executeQuery( procedureShowAvailableTrips );
@@ -3826,8 +3809,7 @@ public class Menu extends javax.swing.JFrame {
         String procedureShowAvailableTrips = "call data_last_name(\""  + lastName  +  "\" ) ";
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             DefaultTableModel tbModelData = (DefaultTableModel)jTable21.getModel();
             tbModelData.setRowCount(0);
@@ -3907,8 +3889,7 @@ public class Menu extends javax.swing.JFrame {
         String br_code = jTable2.getValueAt(selectedRow+1, 0).toString();
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
 
             Statement stmt=con.createStatement();
             
@@ -3933,8 +3914,7 @@ public class Menu extends javax.swing.JFrame {
             String insertWorkerCommand = "INSERT INTO worker VALUES ('" + wrk_at + "','" + wrk_name + "','" + wrk_lname + "'," + wrk_salary + "," + wrk_br_code + ");" ; 
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertWorkerCommand);
@@ -3979,8 +3959,7 @@ public class Menu extends javax.swing.JFrame {
             String insertTripCommand = "INSERT INTO trip VALUES (" + tr_id + ",'" + tr_departure +  "','" + tr_return + "'," + tr_maxseats + "," + tr_cost + "," + tr_br_code + ",'" + tr_gui_AT + "','" + tr_drv_AT + "');" ;
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertTripCommand);
@@ -4009,8 +3988,7 @@ public class Menu extends javax.swing.JFrame {
             String insertOfferCommand = "INSERT INTO offers VALUES (" + offer_id + ",'" + offer_startDate + "','" + offer_endDate + "'," + cost_per_person + "," + offer_dst_id +");";
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
                 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertOfferCommand);
@@ -4039,8 +4017,7 @@ public class Menu extends javax.swing.JFrame {
             String insertPhonesCommand = "INSERT INTO phones VALUES (" + phBrCode + ",'"  + phNumber + "');" ;
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertPhonesCommand);
@@ -4077,8 +4054,7 @@ public class Menu extends javax.swing.JFrame {
             
                 
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertDestinationCommand);
@@ -4112,8 +4088,7 @@ public class Menu extends javax.swing.JFrame {
             String insertGuideCommand = "INSERT INTO guide VALUES ('" + gui_AT + "','" + gui_cv + "'); ";   
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertGuideCommand);
@@ -4139,8 +4114,7 @@ public class Menu extends javax.swing.JFrame {
             String insertLanguageCommand = "INSERT INTO languages VALUES ('" + lng_gui_AT + "','" + lng_gui_cv + "'); ";   
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertLanguageCommand);
@@ -4167,8 +4141,7 @@ public class Menu extends javax.swing.JFrame {
             String insertPhonesCommand = "INSERT INTO driver VALUES ('" + drv_AT + "','" + drv_license + "','" + drv_route + "'," + drv_experience + ");";
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertPhonesCommand);
@@ -4196,8 +4169,7 @@ public class Menu extends javax.swing.JFrame {
             String insertAdminCommand = "INSERT INTO admin VALUES ('" + adm_AT + "','" + adm_type + "','" + adm_diploma + "');";
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertAdminCommand);
@@ -4226,8 +4198,7 @@ public class Menu extends javax.swing.JFrame {
         String insertManagerCommand = "INSERT INTO manages VALUES ('" + mng_adm_AT + "',"  + mng_br_code + ");" ;
 
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
 
             Statement stmt=con.createStatement();
             stmt.executeUpdate(insertManagerCommand);
@@ -4255,8 +4226,7 @@ public class Menu extends javax.swing.JFrame {
             String insertEventCommand = "INSERT INTO event VALUES (" + ev_tr_id + ",'"  + ev_start + "','" + ev_end + "','" + ev_descr + "');" ;
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertEventCommand);
@@ -4285,8 +4255,7 @@ public class Menu extends javax.swing.JFrame {
             String insertReservationCommand = "INSERT INTO reservation VALUES (" + res_tr_id + "," + res_seatnum + ",'" + res_name + "','" + res_lname + "','" + res_isadult + "');";
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertReservationCommand);
@@ -4315,8 +4284,7 @@ public class Menu extends javax.swing.JFrame {
             String insertReservationOfferCommand = "INSERT INTO reservation_offers VALUES (" + res_offer_id + ",'" + res_name + "','" + res_lname + "'," + offer_id_trip + "," + res_deposit + ");";
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertReservationOfferCommand);
@@ -4345,8 +4313,7 @@ public class Menu extends javax.swing.JFrame {
             String insertItOfficerCommand = "INSERT INTO itOfficer VALUES ('" + it_AT + "','" + password + "','" + start_date + "'," + end_date + ");" ; 
             
             try  {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                Connection con = ConnectionToDb.connectMySqlDB();
 
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertItOfficerCommand);
@@ -4371,8 +4338,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteDestinationCommand = "delete from destination where dst_id= " + dst_id + ";"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
 
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteDestinationCommand);
@@ -4395,8 +4361,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from driver where drv_AT= '" + drv_AT + "';"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
 
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4419,8 +4384,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from itOfficer where it_AT= '" + it_AT + "';"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4444,8 +4408,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from event where ev_tr_id= " + ev_tr_id + " AND ev_start= '" + ev_start + "';"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4469,8 +4432,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from guide where gui_AT = '" + gui_AT + "';"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4493,8 +4455,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from languages where lng_gui_AT= '" + lng_gui_AT + "' AND lng_language= '" + lng_language + "';"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4516,8 +4477,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from offers where offer_id= " + offer_id + ";"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4541,8 +4501,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from phones where ph_br_code= " + ph_br_code + " AND ph_number='"+ ph_number +"';"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4567,8 +4526,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from reservation where res_tr_id= " + res_tr_id + " AND res_seatnum="+ res_seatnum +";"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4592,8 +4550,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from reservation_offers where res_offer_id= " + res_offer_id +";"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4616,8 +4573,7 @@ public class Menu extends javax.swing.JFrame {
         String deleteCommand = "delete from trip where tr_id= " + tr_id +";"; 
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             stmt.executeUpdate(deleteCommand);
@@ -4640,8 +4596,7 @@ public class Menu extends javax.swing.JFrame {
         
         
         try  {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            Connection con = ConnectionToDb.connectMySqlDB();
             
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from log");
