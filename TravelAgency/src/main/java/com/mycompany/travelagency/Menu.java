@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -344,7 +345,6 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         dataMenuPanel = new javax.swing.JPanel();
         branchesPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -557,6 +557,9 @@ public class Menu extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
+        travelToPanel = new javax.swing.JPanel();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        jTable23 = new javax.swing.JTable();
         branchesMenuPanel = new javax.swing.JPanel();
         branchInfoPanel = new javax.swing.JPanel();
         jScrollPane17 = new javax.swing.JScrollPane();
@@ -610,6 +613,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -687,9 +691,8 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(branchesPanelLayout.createSequentialGroup()
                         .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2)
-                            .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5))
                         .addGap(347, 347, 347)
                         .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(branchesPanelLayout.createSequentialGroup()
@@ -725,11 +728,12 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(branchesPanelLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jButton5)))
-                .addGap(41, 41, 41)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, branchesPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton5)
+                        .addGap(40, 40, 40)))
                 .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -868,6 +872,11 @@ public class Menu extends javax.swing.JFrame {
         jButton10.setText("Change destination data");
 
         jButton11.setText("Delete destination");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jLabel17.setText("dst_id");
 
@@ -985,6 +994,11 @@ public class Menu extends javax.swing.JFrame {
         jButton22.setText("Change Driver Data");
 
         jButton23.setText("Delete Driver");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         jLabel32.setText("drv_AT");
 
@@ -1089,6 +1103,11 @@ public class Menu extends javax.swing.JFrame {
         jButton43.setText("Change it officer data");
 
         jButton44.setText("Delete it officer");
+        jButton44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton44ActionPerformed(evt);
+            }
+        });
 
         jLabel60.setText("it_AT");
 
@@ -1194,6 +1213,11 @@ public class Menu extends javax.swing.JFrame {
         jButton13.setText("Change event data");
 
         jButton14.setText("Delete event data");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setText("ev_tr_id");
 
@@ -1297,6 +1321,11 @@ public class Menu extends javax.swing.JFrame {
         jButton25.setText("Change Guide Data");
 
         jButton26.setText("Delete Guide");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
 
         jLabel36.setText("gui_At");
 
@@ -1389,6 +1418,11 @@ public class Menu extends javax.swing.JFrame {
         jButton31.setText("Change language data");
 
         jButton32.setText("Delete language");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
 
         jLabel40.setText("lng_gui_AT");
 
@@ -1558,6 +1592,11 @@ public class Menu extends javax.swing.JFrame {
         jButton40.setText("Change Offer Data");
 
         jButton41.setText("Delete Offer");
+        jButton41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton41ActionPerformed(evt);
+            }
+        });
 
         jLabel55.setText("offer_id");
 
@@ -1674,6 +1713,11 @@ public class Menu extends javax.swing.JFrame {
         jButton16.setText("Change Phone Data");
 
         jButton17.setText("Delete Phone ");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jLabel27.setText("ph_br_code");
 
@@ -1760,6 +1804,11 @@ public class Menu extends javax.swing.JFrame {
         jButton37.setText("Change reservation data");
 
         jButton38.setText("Delete reservation");
+        jButton38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton38ActionPerformed(evt);
+            }
+        });
 
         jLabel50.setText("res_tr_id");
 
@@ -1866,6 +1915,11 @@ public class Menu extends javax.swing.JFrame {
         jButton46.setText("Change Reservation Offer Data");
 
         jButton47.setText("Delete Reservation Offer");
+        jButton47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton47ActionPerformed(evt);
+            }
+        });
 
         jLabel64.setText("res_offer_id");
 
@@ -1976,6 +2030,11 @@ public class Menu extends javax.swing.JFrame {
         jButton33.setText("Change trip data");
 
         jButton34.setText("Delete trip");
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton34ActionPerformed(evt);
+            }
+        });
 
         jButton36.setText("New trip");
         jButton36.addActionListener(new java.awt.event.ActionListener() {
@@ -2247,6 +2306,38 @@ public class Menu extends javax.swing.JFrame {
         );
 
         dataMenuPanel.add(workersPanel, "card16");
+
+        jTable23.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane23.setViewportView(jTable23);
+
+        javax.swing.GroupLayout travelToPanelLayout = new javax.swing.GroupLayout(travelToPanel);
+        travelToPanel.setLayout(travelToPanelLayout);
+        travelToPanelLayout.setHorizontalGroup(
+            travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(travelToPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 1129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        travelToPanelLayout.setVerticalGroup(
+            travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(travelToPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(666, Short.MAX_VALUE))
+        );
+
+        dataMenuPanel.add(travelToPanel, "card17");
 
         getContentPane().add(dataMenuPanel, "card2");
 
@@ -2554,9 +2645,17 @@ public class Menu extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "logid", "logdescr", "log_ID_AT", "log_date"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane16.setViewportView(jTable16);
 
         javax.swing.GroupLayout logsMenuPanelLayout = new javax.swing.GroupLayout(logsMenuPanel);
@@ -2572,8 +2671,8 @@ public class Menu extends javax.swing.JFrame {
             logsMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(logsMenuPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         getContentPane().add(logsMenuPanel, "card5");
@@ -2757,6 +2856,15 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Logs");
+
+        jMenuItem18.setText("Logs data");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem18);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -2876,6 +2984,26 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+            
+        int selectedRow = jTable2.getSelectedRow();
+        String br_code = jTable2.getValueAt(selectedRow, 0).toString();
+        System.out.println(br_code);
+        String deleteBranchCommand = "delete from branch where br_code= " + br_code + ";"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteBranchCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -3114,7 +3242,7 @@ public class Menu extends javax.swing.JFrame {
         catch(Exception e){ System.out.println(e);} 
         
     }//GEN-LAST:event_jMenuItem7ActionPerformed
-
+    
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
         branchesMenuPanel.setVisible(false);
@@ -3774,6 +3902,22 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        
+        int selectedRow = jTable2.getSelectedRow();
+        String br_code = jTable2.getValueAt(selectedRow+1, 0).toString();
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+
+            Statement stmt=con.createStatement();
+            
+            
+            
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -4218,6 +4362,309 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton42ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable3.getSelectedRow();
+        String dst_id = jTable3.getValueAt(selectedRow, 0).toString();
+        
+        String deleteDestinationCommand = "delete from destination where dst_id= " + dst_id + ";"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteDestinationCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable3.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable7.getSelectedRow();
+        String drv_AT = jTable7.getValueAt(selectedRow, 0).toString();
+        
+        String deleteCommand = "delete from driver where drv_AT= '" + drv_AT + "';"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable7.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable15.getSelectedRow();
+        String it_AT = jTable15.getValueAt(selectedRow, 0).toString();
+
+        String deleteCommand = "delete from itOfficer where it_AT= '" + it_AT + "';"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable15.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton44ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable11.getSelectedRow();
+        String ev_tr_id = jTable11.getValueAt(selectedRow, 0).toString();
+        String ev_start = jTable11.getValueAt(selectedRow, 1).toString();
+        
+        String deleteCommand = "delete from event where ev_tr_id= " + ev_tr_id + " AND ev_start= '" + ev_start + "';"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable11.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable5.getSelectedRow();
+        String gui_AT = jTable5.getValueAt(selectedRow, 0).toString();
+        
+            
+        String deleteCommand = "delete from guide where gui_AT = '" + gui_AT + "';"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable5.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        String lng_gui_AT = jTable6.getValueAt(selectedRow, 0).toString();
+        String lng_language = jTable6.getValueAt(selectedRow, 1).toString();
+        
+        String deleteCommand = "delete from languages where lng_gui_AT= '" + lng_gui_AT + "' AND lng_language= '" + lng_language + "';"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable6.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable1.getSelectedRow();
+        String offer_id = jTable1.getValueAt(selectedRow, 0).toString();
+        
+        String deleteCommand = "delete from offers where offer_id= " + offer_id + ";"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable13.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton41ActionPerformed
+    
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable1.getSelectedRow();
+        String ph_br_code = jTable1.getValueAt(selectedRow, 0).toString();
+        String ph_number = jTable1.getValueAt(selectedRow, 1).toString();
+        
+        String deleteCommand = "delete from phones where ph_br_code= " + ph_br_code + " AND ph_number='"+ ph_number +"';"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+
+            DefaultTableModel tbModel = (DefaultTableModel)jTable1.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+        
+    }//GEN-LAST:event_jButton17ActionPerformed
+    
+    private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable12.getSelectedRow();
+        String res_tr_id = jTable12.getValueAt(selectedRow, 0).toString();
+        String res_seatnum = jTable12.getValueAt(selectedRow, 1).toString();
+        
+        String deleteCommand = "delete from reservation where res_tr_id= " + res_tr_id + " AND res_seatnum="+ res_seatnum +";"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+            
+            DefaultTableModel tbModel = (DefaultTableModel)jTable12.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton38ActionPerformed
+
+    private void jButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton47ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable14.getSelectedRow();
+        String res_offer_id = jTable14.getValueAt(selectedRow, 0).toString();
+        
+        
+        String deleteCommand = "delete from reservation_offers where res_offer_id= " + res_offer_id +";"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+            
+            DefaultTableModel tbModel = (DefaultTableModel)jTable14.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton47ActionPerformed
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable10.getSelectedRow();
+        String tr_id = jTable10.getValueAt(selectedRow, 0).toString();
+        
+        
+        String deleteCommand = "delete from trip where tr_id= " + tr_id +";"; 
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+            
+            DefaultTableModel tbModel = (DefaultTableModel)jTable10.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        // TODO add your handling code here:
+        
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        dataMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(true);
+        
+        
+        try  {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+            
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from log");
+            DefaultTableModel tbModel = (DefaultTableModel)jTable16.getModel();
+            tbModel.setRowCount(0);
+            while(rs.next()){
+
+                String logid = rs.getString("logid");
+                String logdescrc = rs.getString("logdescrc");
+                String log_ID_AT = rs.getString("log_ID_AT");
+                String log_date = rs.getString("log_date");
+
+                String tbData[] = {logid , logdescrc , log_ID_AT , log_date };
+                
+                tbModel.addRow(tbData);
+            }
+            
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4333,7 +4780,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -4416,6 +4862,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -4439,6 +4886,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -4461,6 +4909,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTable jTable20;
     private javax.swing.JTable jTable21;
     private javax.swing.JTable jTable22;
+    private javax.swing.JTable jTable23;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
@@ -4518,6 +4967,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel reservationOffersPanel;
     private javax.swing.JPanel reservationsPanel;
     private javax.swing.JTextField startDateTextField;
+    private javax.swing.JPanel travelToPanel;
     private javax.swing.JPanel tripsPanel;
     private javax.swing.JPanel workersPanel;
     // End of variables declaration//GEN-END:variables
