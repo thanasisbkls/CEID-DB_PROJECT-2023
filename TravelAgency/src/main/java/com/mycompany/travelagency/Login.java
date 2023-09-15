@@ -112,7 +112,7 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -128,7 +128,7 @@ public class Login extends javax.swing.JFrame {
             //Delete temporary
             Statement stmt3=con.createStatement();
             stmt3.execute("truncate table templogin;");
-             
+            
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from itOfficer");
             

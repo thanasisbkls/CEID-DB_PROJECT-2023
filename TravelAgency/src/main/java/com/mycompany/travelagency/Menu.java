@@ -15,6 +15,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
@@ -73,7 +75,7 @@ public class Menu extends javax.swing.JFrame {
                 tbModel = (DefaultTableModel)jTable3.getModel();
                 tbModel.setRowCount(0);
                 while(rs.next()){
-
+                    
                     String dst_id = String.valueOf(rs.getInt("dst_id") );
                     String dst_name = rs.getString("dst_name");
                     String dst_descr = rs.getString("dst_descr");
@@ -461,6 +463,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jComboBox8 = new javax.swing.JComboBox<>();
         jComboBox9 = new javax.swing.JComboBox<>();
+        jButton28 = new javax.swing.JButton();
         offersPanel = new javax.swing.JPanel();
         jScrollPane13 = new javax.swing.JScrollPane();
         jTable13 = new javax.swing.JTable();
@@ -560,6 +563,17 @@ public class Menu extends javax.swing.JFrame {
         travelToPanel = new javax.swing.JPanel();
         jScrollPane23 = new javax.swing.JScrollPane();
         jTable23 = new javax.swing.JTable();
+        jButton48 = new javax.swing.JButton();
+        jButton49 = new javax.swing.JButton();
+        jButton50 = new javax.swing.JButton();
+        jLabel69 = new javax.swing.JLabel();
+        jComboBox23 = new javax.swing.JComboBox<>();
+        jLabel70 = new javax.swing.JLabel();
+        jComboBox24 = new javax.swing.JComboBox<>();
+        jLabel71 = new javax.swing.JLabel();
+        jTextField22 = new javax.swing.JTextField();
+        jLabel72 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
         branchesMenuPanel = new javax.swing.JPanel();
         branchInfoPanel = new javax.swing.JPanel();
         jScrollPane17 = new javax.swing.JScrollPane();
@@ -608,6 +622,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -763,9 +778,7 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable8.setColumnSelectionAllowed(true);
         jScrollPane8.setViewportView(jTable8);
-        jTable8.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jButton18.setText("New Admin");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -775,8 +788,18 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton19.setText("Change Admin Data");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         jButton20.setText("Delete Admin");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         jLabel29.setText("adm_AT");
 
@@ -870,6 +893,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton10.setText("Change destination data");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setText("Delete destination");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -980,9 +1008,7 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable7.setColumnSelectionAllowed(true);
         jScrollPane7.setViewportView(jTable7);
-        jTable7.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         jButton21.setText("New Driver");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -992,6 +1018,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton22.setText("Change Driver Data");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
 
         jButton23.setText("Delete Driver");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -1101,6 +1132,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton43.setText("Change it officer data");
+        jButton43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton43ActionPerformed(evt);
+            }
+        });
 
         jButton44.setText("Delete it officer");
         jButton44.addActionListener(new java.awt.event.ActionListener() {
@@ -1211,6 +1247,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton13.setText("Change event data");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setText("Delete event data");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -1319,6 +1360,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton25.setText("Change Guide Data");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
 
         jButton26.setText("Delete Guide");
         jButton26.addActionListener(new java.awt.event.ActionListener() {
@@ -1404,9 +1450,7 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable6.setColumnSelectionAllowed(true);
         jScrollPane6.setViewportView(jTable6);
-        jTable6.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jButton30.setText("New language");
         jButton30.addActionListener(new java.awt.event.ActionListener() {
@@ -1416,6 +1460,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton31.setText("Change language data");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
 
         jButton32.setText("Delete language");
         jButton32.addActionListener(new java.awt.event.ActionListener() {
@@ -1519,6 +1568,13 @@ public class Menu extends javax.swing.JFrame {
 
         jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jButton28.setText("Change Manager");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout managersPanelLayout = new javax.swing.GroupLayout(managersPanel);
         managersPanel.setLayout(managersPanelLayout);
         managersPanelLayout.setHorizontalGroup(
@@ -1530,17 +1586,20 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(managersPanelLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton29)
+                    .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(managersPanelLayout.createSequentialGroup()
-                        .addComponent(jButton27)
-                        .addGap(255, 255, 255)
                         .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel38))))
-                .addGap(36, 36, 36)
-                .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox8, 0, 161, Short.MAX_VALUE)
-                    .addComponent(jComboBox9, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton29)
+                            .addGroup(managersPanelLayout.createSequentialGroup()
+                                .addComponent(jButton27)
+                                .addGap(255, 255, 255)
+                                .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jLabel38))))
+                        .addGap(36, 36, 36)
+                        .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboBox8, 0, 161, Short.MAX_VALUE)
+                            .addComponent(jComboBox9, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         managersPanelLayout.setVerticalGroup(
@@ -1553,16 +1612,15 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton27)
                     .addComponent(jLabel38)
                     .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(managersPanelLayout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel39)
-                            .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(managersPanelLayout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jButton29)))
-                .addContainerGap(348, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addComponent(jButton28)
+                .addGap(12, 12, 12)
+                .addGroup(managersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addComponent(jButton29)
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(managersPanel, "card10");
@@ -1578,9 +1636,16 @@ public class Menu extends javax.swing.JFrame {
                 "offer_id", "offer_startDate", "offer_endDate", "cost_per_person", "offer_dst_id"
             }
         ));
-        jTable13.setColumnSelectionAllowed(true);
+        jTable13.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTable13AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane13.setViewportView(jTable13);
-        jTable13.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jButton39.setText("New Offer");
         jButton39.addActionListener(new java.awt.event.ActionListener() {
@@ -1590,6 +1655,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton40.setText("Change Offer Data");
+        jButton40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton40ActionPerformed(evt);
+            }
+        });
 
         jButton41.setText("Delete Offer");
         jButton41.addActionListener(new java.awt.event.ActionListener() {
@@ -1711,6 +1781,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton16.setText("Change Phone Data");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jButton17.setText("Delete Phone ");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -1790,9 +1865,7 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable12.setColumnSelectionAllowed(true);
         jScrollPane12.setViewportView(jTable12);
-        jTable12.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         jButton35.setText("New reservation");
         jButton35.addActionListener(new java.awt.event.ActionListener() {
@@ -1802,6 +1875,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton37.setText("Change reservation data");
+        jButton37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton37ActionPerformed(evt);
+            }
+        });
 
         jButton38.setText("Delete reservation");
         jButton38.addActionListener(new java.awt.event.ActionListener() {
@@ -1901,9 +1979,7 @@ public class Menu extends javax.swing.JFrame {
                 "res_offer_id", "res_name", "res_lname", "offer_id_trip", "res_deposit"
             }
         ));
-        jTable14.setColumnSelectionAllowed(true);
         jScrollPane14.setViewportView(jTable14);
-        jTable14.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         jButton45.setText("New Reservation Offer");
         jButton45.addActionListener(new java.awt.event.ActionListener() {
@@ -1913,6 +1989,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton46.setText("Change Reservation Offer Data");
+        jButton46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton46ActionPerformed(evt);
+            }
+        });
 
         jButton47.setText("Delete Reservation Offer");
         jButton47.addActionListener(new java.awt.event.ActionListener() {
@@ -2023,11 +2104,14 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable10.setColumnSelectionAllowed(true);
         jScrollPane10.setViewportView(jTable10);
-        jTable10.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
         jButton33.setText("Change trip data");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
 
         jButton34.setText("Delete trip");
         jButton34.addActionListener(new java.awt.event.ActionListener() {
@@ -2065,15 +2149,11 @@ public class Menu extends javax.swing.JFrame {
 
         jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField26.setText("jTextField26");
-
-        jTextField27.setText("jTextField27");
-
-        jTextField28.setText("jTextField28");
-
-        jTextField29.setText("jTextField29");
-
-        jTextField30.setText("jTextField30");
+        jTextField26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField26ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tripsPanelLayout = new javax.swing.GroupLayout(tripsPanel);
         tripsPanel.setLayout(tripsPanelLayout);
@@ -2171,6 +2251,16 @@ public class Menu extends javax.swing.JFrame {
 
         dataMenuPanel.add(tripsPanel, "card15");
 
+        workersPanel.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                workersPanelAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -2207,6 +2297,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton8.setText("Delete Worker");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("wrk_AT");
 
@@ -2315,18 +2410,91 @@ public class Menu extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "to_tr_id", "to_dst_id", "to_arrival", "to_departure"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane23.setViewportView(jTable23);
+
+        jButton48.setText("New travelTo");
+        jButton48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton48ActionPerformed(evt);
+            }
+        });
+
+        jButton49.setText("Change travelTo");
+        jButton49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton49ActionPerformed(evt);
+            }
+        });
+
+        jButton50.setText("Delete travelTo");
+        jButton50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton50ActionPerformed(evt);
+            }
+        });
+
+        jLabel69.setText("to_tr_id");
+
+        jComboBox23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel70.setText("to_dst_id");
+
+        jComboBox24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel71.setText("to_arrival");
+
+        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField22ActionPerformed(evt);
+            }
+        });
+
+        jLabel72.setText("to_departure");
 
         javax.swing.GroupLayout travelToPanelLayout = new javax.swing.GroupLayout(travelToPanel);
         travelToPanel.setLayout(travelToPanelLayout);
         travelToPanelLayout.setHorizontalGroup(
             travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(travelToPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 1129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(travelToPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 1129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(travelToPanelLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton49, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(jButton50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(173, 173, 173)
+                        .addGroup(travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(111, 111, 111)
+                        .addGroup(travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(travelToPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(travelToPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel72)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField23)))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         travelToPanelLayout.setVerticalGroup(
@@ -2334,7 +2502,24 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(travelToPanelLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(666, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addGroup(travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton48)
+                    .addComponent(jLabel69)
+                    .addComponent(jComboBox23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel71)
+                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(jButton49)
+                .addGap(3, 3, 3)
+                .addGroup(travelToPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel70)
+                    .addComponent(jComboBox24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel72)
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(jButton50)
+                .addContainerGap(499, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(travelToPanel, "card17");
@@ -2819,6 +3004,14 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem15);
 
+        jMenuItem19.setText("TravelTo");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem19);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Branches");
@@ -3128,8 +3321,8 @@ public class Menu extends javax.swing.JFrame {
             while(rs.next()){
 
                 String ev_tr_id = String.valueOf(rs.getInt("ev_tr_id") );
-                String ev_start = rs.getString("ev_start");
-                String ev_end = rs.getString("ev_end");
+                String ev_start = rs.getDate("ev_start").toString();
+                String ev_end = rs.getDate("ev_end").toString();
                 String ev_descr = rs.getString("ev_descr");
 
                 String tbData[] = {ev_tr_id, ev_start, ev_end, ev_descr};
@@ -3886,18 +4079,75 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         int selectedRow = jTable2.getSelectedRow();
-        String br_code = jTable2.getValueAt(selectedRow+1, 0).toString();
+        if(selectedRow != -1){
+        
+            String br_code = jTable2.getValueAt(selectedRow, 0).toString();
         
         try  {
-            Connection con = ConnectionToDb.connectMySqlDB();
+            
+                Connection con = ConnectionToDb.connectMySqlDB();
 
-            Statement stmt=con.createStatement();
+                String[] data = new String[ 4 ];
+
+                data[0] = jTextField2.getText();
+                data[1] = jTextField3.getText();
+                data[2] = jTextField4.getText();
+                data[3] = jTextField5.getText();
+
+                String command0 = "UPDATE branch set br_code=" + data[0] + " where br_code= " + br_code + ";";
+                String command1 = "UPDATE branch set br_num=" + data[1] + " where br_code= " + br_code + ";";
+                String command2 = "UPDATE branch set br_street='" + data[2] + "' where br_code= " + br_code + ";";
+                String command3 = "UPDATE branch set br_city='" + data[3] + "' where br_code= " + br_code + ";";
+                System.out.println(command0);
+                System.out.println(command1);
+                System.out.println(command2);
+                System.out.println(command3);
+            
+            
+                if(!data[1].equals("")){
+                    CallableStatement stmt = con.prepareCall(command1);
+                    stmt.executeUpdate();
+                }
+                if(!data[2].equals("")){
+                   CallableStatement stmt = con.prepareCall(command2);
+                   stmt.executeUpdate();
+                }
+                if(!data[3].equals("")){
+                    CallableStatement stmt = con.prepareCall(command3);
+                   stmt.executeUpdate();
+                }
+                if(!data[0].equals("")){
+                    CallableStatement stmt = con.prepareCall(command0);
+                    stmt.executeUpdate();
+
+                }
+
+                System.out.println(br_code);
+                //Update table 
+                CallableStatement stmt = con.prepareCall("select * from branch");
+                ResultSet rs= stmt.executeQuery();
+                DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
+                tbModel.setRowCount(0);
+                while(rs.next()){
+
+                    String br_code2 = rs.getString("br_code") ;
+                    String br_num =  rs.getString("br_num") ;
+                    String br_street = rs.getString("br_street");
+                    String br_city = rs.getString("br_city");
+
+                    String tbData[] = {br_code2, br_num, br_street, br_city};
+                    //DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
+
+                    tbModel.addRow(tbData);
+                }
             
             
             
             con.close();
         }
         catch(Exception e){ System.out.println(e);} 
+        }
+        
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -3932,6 +4182,91 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        
+        int selectedRow = jTable4.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable4.getValueAt(selectedRow, 0).toString();
+            String key2 = jTable4.getValueAt(selectedRow, 4).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 5 ];
+                    
+                    data[0] = jTextField6.getText();
+                    data[1] = jTextField7.getText();
+                    data[2] = jTextField8.getText();
+                    data[3] = jTextField9.getText();
+                    data[4] = jComboBox2.getSelectedItem().toString();
+                    
+                    
+                    String command1 = "UPDATE worker set wrk_name = '" + data[1] + "' where wrk_AT = '" + key1 + "' and wrk_br_code = "+ key2 +" ;";
+                    String command2 = "UPDATE worker set wrk_lame = '" + data[2] + "' where wrk_AT = '" + key1 + "' and wrk_br_code = "+ key2 +" ;";
+                    String command3 = "UPDATE worker set wrk_salary = " + data[3] + " where wrk_AT = '" + key1 + "' and wrk_br_code = "+ key2 +" ;";
+                    String command4 = "UPDATE worker set wrk_br_code = " + data[4] + " where wrk_AT = '" + key1 + "' and wrk_br_code = "+ key2 +" ;";
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        
+                    }
+                    if(!data[2].equals("")){
+                        CallableStatement stmt = con.prepareCall(command2);
+                        stmt.executeUpdate();
+                        
+                    }
+                    if(!data[3].equals("")){
+                        float new_salary = Float.parseFloat(data[3]);  
+                        float old_salary = Float.parseFloat(jTable4.getValueAt(selectedRow, 3).toString());
+                        //Check if salary is lower than the previous salary.
+                        if( old_salary < new_salary ){
+                            CallableStatement stmt = con.prepareCall(command3);
+                            stmt.executeUpdate();
+                        }
+                        else{
+                            JFrame f=new JFrame();  
+                            JOptionPane.showMessageDialog(f,"You cant add lower salary!!!","Alert",JOptionPane.WARNING_MESSAGE);  
+                        }
+                        
+                    }
+                    if(!data[4].equals("")){
+                        CallableStatement stmt = con.prepareCall(command4);
+                        stmt.executeUpdate();
+                        key2 = data[4];
+                    }
+                    
+                    if(!data[0].equals("")){
+                        String command0 = "UPDATE worker set wrk_AT = '" + data[0] + "' where wrk_AT = '" + key1 + "' and wrk_br_code = "+ key2 +" ;";
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+                        
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from worker");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable4.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                        
+                        String wrk_AT = rs.getString("wrk_AT") ;
+                        String wrk_name =  rs.getString("wrk_name") ;
+                        String wrk_lame =  rs.getString("wrk_lame") ;
+                        String wrk_salary =  rs.getString("wrk_salary") ;
+                        String wrk_br_code =  rs.getString("wrk_br_code") ;
+                        
+                        String tbData[] = {wrk_AT, wrk_name ,wrk_lame ,wrk_salary , wrk_br_code};
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
@@ -4184,9 +4519,48 @@ public class Menu extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton18ActionPerformed
-
+    
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         // TODO add your handling code here:
+        
+        int selectedRow = jTable9.getSelectedRow();
+        String mng_adm_AT = jTable9.getValueAt(selectedRow, 0).toString();
+        String mng_br_code = jTable9.getValueAt(selectedRow, 1).toString();
+        
+        String deleteCommand = "delete from manages where mng_adm_AT = '" + mng_adm_AT + "' AND mng_br_code = '" + mng_br_code + "';"; 
+        int isAdministrative = 0;
+        try  {
+            Connection con = ConnectionToDb.connectMySqlDB();
+            
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from admin");
+           
+            while(rs.next()){
+
+                String adm_AT = rs.getString("adm_AT");                
+                String adm_type = rs.getString("adm_type");  
+                if(adm_AT.equals(mng_adm_AT) && adm_type.equals("ADMINISTRATIVE") ){
+                    
+                    isAdministrative = 1;
+                    
+                    JFrame f=new JFrame();  
+                    JOptionPane.showMessageDialog(f,"You cant delete administrative worker.","Alert",JOptionPane.WARNING_MESSAGE);
+                    break;
+                }
+
+            }
+            
+            if(isAdministrative == 0){
+                stmt.executeUpdate(deleteCommand);
+                DefaultTableModel tbModel = (DefaultTableModel)jTable9.getModel();
+
+                tbModel.removeRow(selectedRow);
+            }
+            isAdministrative = 0;
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
@@ -4620,6 +4994,1174 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable8.getSelectedRow();
+        if(selectedRow != -1){
+        
+            String key = jTable8.getValueAt(selectedRow, 0).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                        
+                    String[] data = new String[ 3 ];
+                        
+                    data[0] = jComboBox4.getSelectedItem().toString();
+                    data[1] = jComboBox5.getSelectedItem().toString();
+                    data[2] = jTextField21.getText();
+                    
+                    String command0 = "UPDATE admin set adm_AT='" + data[0] + "' where adm_AT= '" + key + "' ;";
+                    String command1 = "UPDATE admin set adm_type= '" + data[1] + "' where adm_AT= '" + key + "' ;";
+                    String command2 = "UPDATE admin set adm_diploma= '" + data[2] + "' where adm_At= '" + key + "' ;";
+    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                    }
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[0].equals("")){
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from admin");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable8.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+
+                        String adm_AT = rs.getString("adm_AT") ;
+                        String adm_type =  rs.getString("adm_type") ;
+                        String adm_diploma = rs.getString("adm_diploma");
+                        
+                        String tbData[] = {adm_AT, adm_type, adm_diploma };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+        
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable3.getSelectedRow();
+        if(selectedRow != -1){
+        
+            String key = jTable3.getValueAt(selectedRow, 0).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                        
+                    String[] data = new String[ 6 ];
+                    
+                    data[0] = jTextField10.getText();
+                    data[1] = jTextField11.getText();
+                    data[2] = jTextField12.getText();
+                    data[3] = jComboBox20.getSelectedItem().toString();
+                    data[4] = jTextField14.getText();
+                    data[5] = jTextField15.getText();
+                    
+                    String command0 = "UPDATE destination set dst_id=" + data[0] + " where dst_id= '" + key + "' ;";
+                    String command1 = "UPDATE destination set dst_name= '" + data[1] + "' where dst_id= '" + key + "' ;";
+                    String command2 = "UPDATE destination set dst_descr = '" + data[2] + "' where dst_id= '" + key + "' ;";
+                    String command3 = "UPDATE destination set dst_rtype = '" + data[3] + "' where dst_id= '" + key + "' ;";
+                    String command4 = "UPDATE destination set dst_language = '" + data[4] + "' where dst_id= '" + key + "' ;";
+                    String command5 = "UPDATE destination set dst_location = " + data[5] + " where dst_id= '" + key + "' ;";
+    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                    }
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[3].equals("")){
+                       CallableStatement stmt = con.prepareCall(command3);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[4].equals("")){
+                       CallableStatement stmt = con.prepareCall(command4);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[5].equals("")){
+                       CallableStatement stmt = con.prepareCall(command5);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[0].equals("")){
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from destination");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable3.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String dst_id = rs.getString("dst_id") ;
+                        String dst_name =  rs.getString("dst_name") ;
+                        String dst_descr = rs.getString("dst_descr");
+                        String dst_rtype = rs.getString("dst_rtype");
+                        String dst_language = rs.getString("dst_language");
+                        String dst_location = rs.getString("dst_location");
+                        
+                        String tbData[] = {dst_id, dst_name, dst_descr , dst_rtype , dst_language , dst_location };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+        
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable7.getSelectedRow();
+        if(selectedRow != -1){
+        
+            String key = jTable7.getValueAt(selectedRow, 0).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 4 ];
+                    
+                    data[0] = jComboBox6.getSelectedItem().toString();
+                    data[1] = jComboBox21.getSelectedItem().toString();
+                    data[2] = jComboBox22.getSelectedItem().toString();
+                    data[3] = jTextField13.getText();
+                    
+                    String command0 = "UPDATE driver set drv_AT='" + data[0] + "' where drv_AT= '" + key + "' ;";
+                    String command1 = "UPDATE driver set drv_license= '" + data[1] + "' where drv_AT= '" + key + "' ;";
+                    String command2 = "UPDATE driver set drv_route = '" + data[2] + "' where drv_AT= '" + key + "' ;";
+                    String command3 = "UPDATE driver set drv_experience = " + data[3] + " where drv_AT= '" + key + "' ;";
+                    
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                    }
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[3].equals("")){
+                       CallableStatement stmt = con.prepareCall(command3);
+                       stmt.executeUpdate();
+                    }                   
+                    if(!data[0].equals("")){
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from driver");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable7.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String drv_AT = rs.getString("drv_AT") ;
+                        String drv_license =  rs.getString("drv_license") ;
+                        String drv_route = rs.getString("drv_route");
+                        String drv_experience = rs.getString("drv_experience");
+                        
+                        String tbData[] = {drv_AT, drv_license, drv_route , drv_experience  };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton22ActionPerformed
+    
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable15.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key = jTable15.getValueAt(selectedRow, 0).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 4 ];
+                    
+                    data[0] = jComboBox17.getSelectedItem().toString();
+                    data[1] = jTextField38.getText();
+                    data[2] = jTextField39.getText();
+                    data[3] = jTextField40.getText();
+                    
+                    String command0 = "UPDATE itOfficer set it_AT='" + data[0] + "' where it_AT= '" + key + "' ;";
+                    String command1 = "UPDATE itOfficer set password= '" + data[1] + "' where it_AT= '" + key + "' ;";
+                    String command2 = "UPDATE itOfficer set start_date = '" + data[2] + "' where it_AT= '" + key + "' ;";
+                    String command3 = "UPDATE itOfficer set end_date = '" + data[3] + "' where it_AT= '" + key + "' ;";
+                    
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                    }
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[3].equals("")){
+                       CallableStatement stmt = con.prepareCall(command3);
+                       stmt.executeUpdate();
+                    }                   
+                    if(!data[0].equals("")){
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from itOfficer");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable15.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String it_AT = rs.getString("it_AT") ;
+                        String password =  rs.getString("password") ;
+                        String start_date = rs.getString("start_date");
+                        String end_date = rs.getString("end_date");
+                        
+                        String tbData[] = {it_AT, password, start_date , end_date  };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton43ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable11.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable11.getValueAt(selectedRow, 0).toString();
+            String key2 = jTable11.getValueAt(selectedRow, 1).toString();
+           
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 4 ];
+                    
+                    data[0] = jComboBox15.getSelectedItem().toString();
+                    data[1] = jTextField17.getText();
+                    data[2] = jTextField18.getText();
+                    data[3] = jTextField19.getText();
+                    
+                    //String command0 = "UPDATE event set ev_tr_id=" + data[0] + " where ev_tr_id= " + key1 + " , ev_start= '"+ key2 +"' ;";
+                    String command1 = "UPDATE event set ev_start= '" + data[1] + "' where ev_tr_id= " + key1 + " and ev_start= '"+ key2 +"' ;";
+                    String command2 = "UPDATE event set ev_end = '" + data[2] + "' where ev_tr_id= " + key1 + " and ev_start= '"+ key2 +"' ;";
+                    String command3 = "UPDATE event set ev_descr = '" + data[3] + "' where ev_tr_id= " + key1 + " and ev_start= '"+ key2 +"' ;";
+                    
+                    
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[3].equals("")){
+                       CallableStatement stmt = con.prepareCall(command3);
+                       stmt.executeUpdate();
+                    }                   
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[0].equals("")){
+                        String command0 = "UPDATE event set ev_tr_id=" + data[0] + " where ev_tr_id= " + key1 + " and ev_start= '"+ key2 +"' ;";
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+                        
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from event");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable11.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String ev_tr_id = rs.getString("ev_tr_id") ;
+                        String ev_start =  rs.getString("ev_start") ;
+                        String ev_end = rs.getString("ev_end");
+                        String ev_descr = rs.getString("ev_descr");
+                        
+                        String tbData[] = {ev_tr_id, ev_start, ev_end , ev_descr  };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+    
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable5.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key = jTable5.getValueAt(selectedRow, 0).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 2 ];
+                    
+                    data[0] = jComboBox7.getSelectedItem().toString();
+                    data[1] = jTextField24.getText();
+                    
+                    String command0 = "UPDATE guide set gui_AT='" + data[0] + "' where gui_AT= '" + key + "' ;";
+                    String command1 = "UPDATE guide set gui_cv= '" + data[1] + "' where gui_cv= '" + key + "' ;";
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                    }
+                               
+                    if(!data[0].equals("")){
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from guide");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable5.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String gui_AT = rs.getString("gui_AT") ;
+                        String gui_cv =  rs.getString("gui_cv") ;
+                        
+                        String tbData[] = {gui_AT, gui_cv };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable6.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable6.getValueAt(selectedRow, 0).toString();
+            String key2 = jTable6.getValueAt(selectedRow, 1).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 2 ];
+                    
+                    data[0] = jComboBox10.getSelectedItem().toString();
+                    data[1] = jTextField25.getText();
+                            
+                    String command1 = "UPDATE languages set lng_language= '" + data[1] + "' where lng_gui_AT= '" + key1 + "' and lng_language= '"+ key2 +"' ;";
+                     
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[0].equals("")){
+                        String command0 = "UPDATE languages set lng_gui_AT='" + data[0] + "' where lng_gui_AT= '" + key1 + "' and lng_language= '"+ key2 +"' ;";
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+                        
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from languages");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable6.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String lng_gui_AT = rs.getString("lng_gui_AT") ;
+                        String lng_language =  rs.getString("lng_language") ;
+                        
+                        String tbData[] = {lng_gui_AT, lng_language };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable9.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable9.getValueAt(selectedRow, 0).toString();
+            String key2 = jTable9.getValueAt(selectedRow, 1).toString();
+           
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 2 ];
+                    
+                    data[0] = jComboBox8.getSelectedItem().toString();
+                    data[1] = jComboBox9.getSelectedItem().toString();
+
+                    String command1 = "UPDATE manages set mng_adm_AT= '" + data[1] + "' where mng_adm_AT= '" + key1 + "' and mng_br_code= "+ key2 +" ;";
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[0].equals("")){
+                        String command0 = "UPDATE manages set mng_adm_AT= '" + data[0] + "' where mng_adm_AT= '" + key1 + "' and mng_br_code= "+ key2 +" ;";
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+                        
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from manages");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable9.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                        
+                        String mng_adm_AT = rs.getString("mng_adm_AT") ;
+                        String mng_br_code =  rs.getString("mng_br_code") ;
+                        
+                        String tbData[] = {mng_adm_AT, mng_br_code };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+        
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable13.getSelectedRow();
+        if(selectedRow != -1){
+        
+            String key = jTable13.getValueAt(selectedRow, 0).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                        
+                    String[] data = new String[ 5 ];
+                    
+                    data[0] = jTextField16.getText();
+                    data[1] = jTextField35.getText();
+                    data[2] = jTextField36.getText();
+                    data[3] = jTextField37.getText();
+                    data[4] = jComboBox16.getSelectedItem().toString();
+                    
+                    
+                    String command0 = "UPDATE offers set offer_id=" + data[0] + " where offer_id= " + key + " ;";
+                    String command1 = "UPDATE offers set offer_startDate= '" + data[1] + "' where offer_id= " + key + " ;";
+                    String command2 = "UPDATE offers set offer_endDate = '" + data[2] + "' where offer_id= " + key + " ;";
+                    String command3 = "UPDATE offers set cost_per_person = " + data[3] + " where offer_id= " + key + " ;";
+                    String command4 = "UPDATE offers set offer_dst_id = " + data[4] + " where offer_id= " + key + " ;";
+                    
+    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                    }
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[3].equals("")){
+                       CallableStatement stmt = con.prepareCall(command3);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[4].equals("")){
+                       CallableStatement stmt = con.prepareCall(command4);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[0].equals("")){
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from offers");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable13.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String offer_id = rs.getString("offer_id") ;
+                        String offer_startDate =  rs.getString("offer_startDate") ;
+                        String offer_endDate = rs.getString("offer_endDate");
+                        String cost_per_person = rs.getString("cost_per_person");
+                        String offer_dst_id = rs.getString("offer_dst_id");
+                        
+                        String tbData[] = {offer_id, offer_startDate, offer_endDate , cost_per_person , offer_dst_id };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton40ActionPerformed
+
+    private void jTable13AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTable13AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable13AncestorAdded
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable1.getValueAt(selectedRow, 0).toString();
+            String key2 = jTable1.getValueAt(selectedRow, 1).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 2 ];
+                    
+                    data[0] = jComboBox3.getSelectedItem().toString();
+                    data[1] = jTextField20.getText();
+                            
+                    String command1 = "UPDATE phones set ph_number= " + data[1] + " where ph_br_code= '" + key1 + "' and ph_number= '"+ key2 +"' ;";
+                     
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[0].equals("")){
+                        String command0 = "UPDATE phones set ph_br_code= " + data[0] + " where ph_br_code= '" + key1 + "' and ph_number= '"+ key2 +"' ;";
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+                        
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from phones");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable1.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String ph_br_code = rs.getString("ph_br_code") ;
+                        String ph_number =  rs.getString("ph_number") ;
+                        
+                        String tbData[] = {ph_br_code, ph_number };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable12.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable12.getValueAt(selectedRow, 0).toString();
+            String key2 = jTable12.getValueAt(selectedRow, 1).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 5 ];
+                    
+                    data[0] = jComboBox14.getSelectedItem().toString();
+                    data[1] = jTextField31.getText();
+                    data[2] = jTextField32.getText();
+                    data[3] = jTextField33.getText();
+                    data[4] = jComboBox19.getSelectedItem().toString();
+                            
+                    String command1 = "UPDATE reservation set res_seatnum= " + data[1] + " where res_tr_id= " + key1 + " and res_seatnum= "+ key2 +" ;";
+                    String command2 = "UPDATE reservation set res_name= '" + data[1] + "' where res_tr_id= " + key1 + " and res_seatnum= "+ key2 +" ;";
+                    String command3 = "UPDATE reservation set res_lname= '" + data[1] + "' where res_tr_id= " + key1 + " and res_seatnum= "+ key2 +" ;";
+                    String command4 = "UPDATE reservation set res_isadult= '" + data[1] + "' where res_tr_id= " + key1 + " and res_seatnum= "+ key2 +" ;";
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[2].equals("")){
+                        CallableStatement stmt = con.prepareCall(command2);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[3].equals("")){
+                        CallableStatement stmt = con.prepareCall(command3);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[4].equals("")){
+                        CallableStatement stmt = con.prepareCall(command4);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[0].equals("")){
+                        String command0 = "UPDATE reservation set res_tr_id=" + data[0] + " where res_tr_id= '" + key1 + "' and res_seatnum= "+ key2 +" ;";
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+                        
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from reservation");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable12.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String res_tr_id = rs.getString("res_tr_id") ;
+                        String res_seatnum =  rs.getString("res_seatnum") ;
+                        String res_name =  rs.getString("res_name") ;
+                        String res_lname =  rs.getString("res_lname") ;
+                        String res_isadult =  rs.getString("res_isadult") ;
+                        
+                        String tbData[] = {res_tr_id, res_seatnum ,res_name ,res_lname , res_isadult};
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton37ActionPerformed
+
+    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
+        // TODO add your handling code here:
+             int selectedRow = jTable14.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable14.getValueAt(selectedRow, 0).toString();
+          
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 5 ];
+                    
+                    data[0] = jTextField41.getText();
+                    data[1] = jTextField42.getText();
+                    data[2] = jTextField43.getText();
+                    data[3] = jComboBox18.getSelectedItem().toString();
+                    data[4] = jTextField44.getText();
+                    
+                    String command0 = "UPDATE reservation_offers set res_offer_id = " + data[0] + " where res_offer_id = " + key1 + " ;";
+                    String command1 = "UPDATE reservation_offers set res_name = '" + data[1] + "' where res_offer_id = " + key1 + " ;";
+                    String command2 = "UPDATE reservation_offers set res_lname = '" + data[2] + "' where res_offer_id = " + key1 +" ;";
+                    String command3 = "UPDATE reservation_offers set offer_id_trip = " + data[3] + " where res_offer_id = " + key1 + " ;";
+                    String command4 = "UPDATE reservation_offers set res_deposit = " + data[4] + " where res_offer_id = " + key1 + " ;";
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        
+                    }
+                    if(!data[2].equals("")){
+                        CallableStatement stmt = con.prepareCall(command2);
+                        stmt.executeUpdate();
+                        
+                    }
+                    if(!data[3].equals("")){
+                        CallableStatement stmt = con.prepareCall(command3);
+                        stmt.executeUpdate();
+                        
+                    }
+                    if(!data[4].equals("")){
+                        CallableStatement stmt = con.prepareCall(command4);
+                        stmt.executeUpdate();
+                       
+                    }
+                    if(!data[0].equals("")){
+                        
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+                        
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from reservation_offers");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable14.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String res_offer_id = rs.getString("res_offer_id") ;
+                        String res_name =  rs.getString("res_name") ;
+                        String res_lname =  rs.getString("res_lname") ;
+                        String offer_id_trip =  rs.getString("offer_id_trip") ;
+                        String res_deposit =  rs.getString("res_deposit") ;
+                        
+                        String tbData[] = {res_offer_id, res_name ,res_lname ,offer_id_trip , res_deposit};
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton46ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable10.getSelectedRow();
+        if(selectedRow != -1){
+            
+            
+            
+            String key = jTable10.getValueAt(selectedRow, 0).toString();
+            int a=0;
+            
+            try{
+                Connection con = ConnectionToDb.connectMySqlDB();
+                CallableStatement stmt = con.prepareCall("select * from reservation");
+                ResultSet rs= stmt.executeQuery();
+                
+                while(rs.next()){
+                    String res_tr_id = rs.getString("res_tr_id") ;
+                    if(res_tr_id.equals(key)){
+                        JFrame f = new JFrame();
+                        JOptionPane.showMessageDialog(f,"You cant modify trip!!!","Alert",JOptionPane.WARNING_MESSAGE);    
+                        a = 1;
+                        break;
+                    }
+                }
+                
+            }
+            catch(Exception e){ System.out.println(e);}
+            if(a == 0){
+                try  {
+                    
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                    
+                    String[] data = new String[ 8 ];
+                    
+                    data[0] = jTextField26.getText();
+                    data[1] = jTextField27.getText();
+                    data[2] = jTextField28.getText();
+                    data[3] = jTextField29.getText();
+                    data[4] = jTextField30.getText();
+                    data[5] = jComboBox11.getSelectedItem().toString();
+                    data[6] = jComboBox12.getSelectedItem().toString();
+                    data[7] = jComboBox13.getSelectedItem().toString();
+                    
+                    
+                    String command0 = "UPDATE trip set tr_id= " + data[0] + " where tr_id= " + key + " ;";
+                    String command1 = "UPDATE trip set tr_departure= '" + data[1] + "' where tr_id= " + key + " ;";
+                    String command2 = "UPDATE trip set tr_return = '" + data[2] + "' where tr_id= " + key + " ;";
+                    String command3 = "UPDATE trip set tr_maxseats = " + data[3] + " where tr_id= " + key + " ;";
+                    String command4 = "UPDATE trip set tr_cost= " + data[4] + " where tr_id= " + key + " ;";
+                    String command5 = "UPDATE trip set tr_br_code= " + data[5] + " where tr_id= " + key + " ;";
+                    String command6 = "UPDATE trip set tr_gui_AT = '" + data[6] + "' where tr_id= " + key + " ;";
+                    String command7 = "UPDATE trip set tr_drv_AT = '" + data[7] + "' where tr_id= '" + key + "' ;";
+                    
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                    }
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[3].equals("")){
+                       CallableStatement stmt = con.prepareCall(command3);
+                       stmt.executeUpdate();
+                    }                   
+                    if(!data[4].equals("")){
+                        CallableStatement stmt = con.prepareCall(command4);
+                        stmt.executeUpdate();
+
+                    }
+                    if(!data[5].equals("")){
+                        CallableStatement stmt = con.prepareCall(command5);
+                        stmt.executeUpdate();
+                    }
+                    if(!data[6].equals("")){
+                       CallableStatement stmt = con.prepareCall(command6);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[7].equals("")){
+                       CallableStatement stmt = con.prepareCall(command7);
+                       stmt.executeUpdate();
+                    }                   
+                    if(!data[0].equals("")){
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from trip");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable10.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+                            
+                        String tr_id = rs.getString("tr_id") ;
+                        String tr_departure =  rs.getString("tr_departure") ;
+                        String tr_return = rs.getString("tr_return");
+                        String tr_maxseats = rs.getString("tr_maxseats");
+                        String tr_cost = rs.getString("tr_drv_AT") ;
+                        String tr_br_code =  rs.getString("tr_drv_AT") ;
+                        String tr_gui_AT = rs.getString("tr_drv_AT");
+                        String tr_drv_AT = rs.getString("tr_drv_AT");
+                        
+                        String tbData[] = {tr_id, tr_departure, tr_return , tr_maxseats,tr_drv_AT, tr_drv_AT, tr_drv_AT , tr_drv_AT  };
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+            }
+            
+            a = 0;
+            
+        }
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField26ActionPerformed
+
+    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField22ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        // TODO add your handling code here:
+        branchesMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        dataMenuPanel.setVisible(true);
+        dataMenuPanel.removeAll();
+        dataMenuPanel.add(travelToPanel).setVisible(true);
+        jComboBox23.removeAllItems();
+        jComboBox24.removeAllItems();
+        
+        try  {
+                Connection con = ConnectionToDb.connectMySqlDB();
+                
+                Statement stmt=con.createStatement();
+                ResultSet rs=stmt.executeQuery("select * from travelTo");
+                DefaultTableModel tbModel = (DefaultTableModel)jTable23.getModel();
+                tbModel.setRowCount(0);
+                while(rs.next()){
+                    String to_tr_id = String.valueOf(rs.getInt("to_tr_id") );
+                    String to_dst_id = String.valueOf(rs.getInt("to_dst_id") );
+                    String to_arrival = rs.getDate("to_arrival").toString();
+                    String to_departure = rs.getDate("to_departure").toString();
+                    
+                    String tbData[] = {to_tr_id, to_dst_id ,to_arrival  , to_departure };
+                    
+                    tbModel.addRow(tbData);
+                }
+                
+                rs=stmt.executeQuery("select tr_id from trip");
+                while(rs.next()){
+                    
+                    //String br_code = String.valueOf(rs.getInt("br_code") );
+                    String tr_id = rs.getString("tr_id");
+                    jComboBox23.addItem(tr_id);
+                    
+                }
+                
+                rs=stmt.executeQuery("select dst_id from destination");
+                while(rs.next()){
+                    
+                    //String br_code = String.valueOf(rs.getInt("br_code") );
+                    String dst_id = rs.getString("dst_id");
+                    jComboBox24.addItem(dst_id);
+                    
+                }
+                
+                con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
+    private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
+        // TODO add your handling code here:
+        if(  !jTextField22.getText().equals("") && !jTextField23.getText().equals("") ){
+            
+            String to_tr_id = jComboBox23.getSelectedItem().toString();
+            String to_dst_id = jComboBox24.getSelectedItem().toString();
+            String to_arrival = jTextField22.getText();
+            String to_departure = jTextField23.getText();
+            
+            
+            String insertTravelToCommand = "INSERT INTO travelTo VALUES (" + to_tr_id + " , " + to_dst_id + " , '" + to_arrival + "' , '"  +to_departure +"');";
+            
+            try  {
+                Connection con = ConnectionToDb.connectMySqlDB();
+
+                Statement stmt=con.createStatement();
+                stmt.executeUpdate(insertTravelToCommand);
+                
+                DefaultTableModel tbModel = (DefaultTableModel)jTable23.getModel();
+                String tbData[] = { to_tr_id , to_dst_id , to_arrival , to_departure };
+                tbModel.addRow(tbData);
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+            
+        }
+    }//GEN-LAST:event_jButton48ActionPerformed
+
+    private void jButton49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton49ActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = jTable23.getSelectedRow();
+        if(selectedRow != -1){
+            
+            String key1 = jTable23.getValueAt(selectedRow, 0).toString();
+            String key2 = jTable23.getValueAt(selectedRow, 1).toString();
+            
+            try  {
+
+                    Connection con = ConnectionToDb.connectMySqlDB();
+                        
+                    String[] data = new String[ 4 ];
+                    
+                    data[0] = jComboBox23.getSelectedItem().toString();
+                    data[1] = jComboBox24.getSelectedItem().toString();
+                    data[2] = jTextField22.getText();
+                    data[3] = jTextField23.getText();
+                    
+                    
+                    String command1 = "UPDATE travelTo set to_dst_id= " + data[1] + " where to_tr_id = " + key1 + " and to_dst_id = " + key2 +" ;";
+                    String command2 = "UPDATE travelTo set to_arrival= '" + data[2] + "' where to_tr_id = " + key1 + " and to_dst_id = " + key2 +" ;";
+                    String command3 = "UPDATE travelTo set to_departure= '" + data[3] + "' where to_tr_id = " + key1 + " and to_dst_id = " + key2 +" ;";
+                    
+                    
+                    if(!data[2].equals("")){
+                       CallableStatement stmt = con.prepareCall(command2);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[3].equals("")){
+                       CallableStatement stmt = con.prepareCall(command3);
+                       stmt.executeUpdate();
+                    }
+                    if(!data[1].equals("")){
+                        CallableStatement stmt = con.prepareCall(command1);
+                        stmt.executeUpdate();
+                        key2 = data[1];
+                    }
+                    if(!data[0].equals("")){
+                        String command0 = "UPDATE travelTo set to_tr_id= " + data[0] + " where to_tr_id = " + key1 + " and to_dst_id = " + key2 +" ;";
+                        CallableStatement stmt = con.prepareCall(command0);
+                        stmt.executeUpdate();
+
+                    }
+                    
+                    //Update table 
+                    CallableStatement stmt = con.prepareCall("select * from travelTo");
+                    ResultSet rs= stmt.executeQuery();
+                    DefaultTableModel tbModel = (DefaultTableModel)jTable23.getModel();
+                    tbModel.setRowCount(0);
+                    while(rs.next()){
+
+                        String to_tr_id = rs.getString("to_tr_id") ;
+                        String to_dst_id =  rs.getString("to_dst_id") ;
+                        String to_arrival = rs.getString("to_arrival");
+                        String to_departure = rs.getString("to_departure");
+                        
+                        String tbData[] = {to_tr_id, to_dst_id, to_arrival , to_departure};
+                        
+                        tbModel.addRow(tbData);
+                    }
+
+
+
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+        }
+    }//GEN-LAST:event_jButton49ActionPerformed
+
+    private void jButton50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable23.getSelectedRow();
+        String to_tr_id = jTable23.getValueAt(selectedRow, 0).toString();
+        String to_dst_id = jTable23.getValueAt(selectedRow, 1).toString();
+        
+        String deleteCommand = "delete from travelTo where to_tr_id= " + to_tr_id + " AND to_dst_id= "+ to_dst_id +" ;"; 
+        
+        try  {
+            Connection con = ConnectionToDb.connectMySqlDB();
+            
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(deleteCommand);
+            
+            DefaultTableModel tbModel = (DefaultTableModel)jTable23.getModel();
+            
+            tbModel.removeRow(selectedRow);
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton50ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable8.getSelectedRow();
+        String adm_AT = jTable8.getValueAt(selectedRow, 0).toString();
+        String adm_type = jTable8.getValueAt(selectedRow, 1).toString();
+        if( !adm_type.equals("ADMINISTRATIVE")){
+            String deleteCommand = "delete from admin where adm_AT = '" + adm_AT + "';"; 
+            
+            try  {
+                Connection con = ConnectionToDb.connectMySqlDB();
+
+                Statement stmt=con.createStatement();
+                stmt.executeUpdate(deleteCommand);
+
+                DefaultTableModel tbModel = (DefaultTableModel)jTable8.getModel();
+
+                tbModel.removeRow(selectedRow);
+                con.close();
+            }
+            catch(Exception e){ System.out.println(e);} 
+            }
+        else{
+            JFrame f=new JFrame();  
+            JOptionPane.showMessageDialog(f,"You cant delete ADMINISTRATIVE admin","Alert",JOptionPane.WARNING_MESSAGE);     
+        }
+        
+        
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void workersPanelAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_workersPanelAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_workersPanelAncestorAdded
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        
+        int selectedRow = jTable4.getSelectedRow();
+        String wrk_AT = jTable4.getValueAt(selectedRow, 0).toString();
+        String wrk_br_code = jTable4.getValueAt(selectedRow, 4).toString();
+        
+        String deleteCommand = "delete from worker where wrk_AT = '" + wrk_AT + "' AND wrk_br_code = '" + wrk_br_code + "';"; 
+        int isAdministrative = 0;
+        try  {
+            Connection con = ConnectionToDb.connectMySqlDB();
+            
+            Statement stmt=con.createStatement();
+            ResultSet rs=stmt.executeQuery("select * from admin");
+           
+            while(rs.next()){
+
+                String adm_AT = rs.getString("adm_AT");                
+                String adm_type = rs.getString("adm_type");  
+                if(adm_AT.equals(wrk_AT) && adm_type.equals("ADMINISTRATIVE") ){
+                    
+                    isAdministrative = 1;
+                    
+                    JFrame f=new JFrame();  
+                    JOptionPane.showMessageDialog(f,"You cant delete administrative worker.","Alert",JOptionPane.WARNING_MESSAGE);
+                    break;
+                }
+
+            }
+            
+            if(isAdministrative == 0){
+                stmt.executeUpdate(deleteCommand);
+                DefaultTableModel tbModel = (DefaultTableModel)jTable4.getModel();
+
+                tbModel.removeRow(selectedRow);
+            }
+            isAdministrative = 0;
+            con.close();
+        }
+        catch(Exception e){ System.out.println(e);} 
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4687,6 +6229,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
@@ -4708,7 +6251,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton45;
     private javax.swing.JButton jButton46;
     private javax.swing.JButton jButton47;
+    private javax.swing.JButton jButton48;
+    private javax.swing.JButton jButton49;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton50;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -4728,6 +6274,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JComboBox<String> jComboBox21;
     private javax.swing.JComboBox<String> jComboBox22;
+    private javax.swing.JComboBox<String> jComboBox23;
+    private javax.swing.JComboBox<String> jComboBox24;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
@@ -4800,7 +6348,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
@@ -4818,6 +6370,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -4886,6 +6439,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
