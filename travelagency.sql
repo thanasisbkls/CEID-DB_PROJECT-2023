@@ -1286,7 +1286,7 @@ delimiter $
 CREATE PROCEDURE driver_card(id char(10))
 BEGIN
    -- id
-    select wrk_name AS "First Name", wrk_lame AS "Last Name", id AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", wrk_AT AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
         "Salary", drv_license AS "License", drv_route AS "Route", drv_experience AS "Experience"
     from worker
     inner join driver on drv_AT = worker.wrk_AT
@@ -1306,7 +1306,7 @@ delimiter $
 CREATE PROCEDURE guide_card(id char(10))
 BEGIN
    -- id
-    select wrk_name AS "First Name", wrk_lame AS "Last Name", id AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", wrk_AT AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
         "Salary"
     from worker
     inner join guide on guide.gui_AT = worker.wrk_AT
@@ -1329,17 +1329,15 @@ BEGIN
 
 END $
 
-
 drop procedure if exists admin_card;
-
 delimiter $
 CREATE PROCEDURE admin_card(id char(10))
 BEGIN
    -- id
-    select wrk_name AS "First Name", wrk_lame AS "Last Name", id AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", wrk_AT AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
         "Salary", adm_type AS "Type", adm_diploma AS 'Diploma'
     from worker
-    inner join admin on admin.adm_AT = worker.wrk_AT
+    inner join admin on adm_AT = wrk_AT
     where wrk_AT = id;
 
 
