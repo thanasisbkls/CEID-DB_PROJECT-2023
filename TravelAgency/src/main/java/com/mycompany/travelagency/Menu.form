@@ -4312,11 +4312,9 @@
                                   <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jComboBox25" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="jButton51" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="921" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -4329,7 +4327,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel74" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jComboBox25" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton51" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
@@ -4510,14 +4507,6 @@
             <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton51">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Search"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton51ActionPerformed"/>
-          </Events>
-        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="driverMenuPanel">
@@ -4540,8 +4529,6 @@
                               <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jComboBox26" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton52" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
@@ -4575,7 +4562,7 @@
                                           <Component id="jLabel96" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel97" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="69" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel105" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel104" min="-2" max="-2" attributes="0"/>
@@ -4606,7 +4593,6 @@
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton52" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jComboBox26" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
@@ -4672,14 +4658,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Driver"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton52">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Search"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton52ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox26">
           <Properties>
@@ -4882,20 +4860,21 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel107" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel108" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel107" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel108" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="jComboBox27" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jComboBox27" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jButton53" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel112" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="jLabel112" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
@@ -4907,7 +4886,7 @@
                                                           <Component id="jLabel115" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel114" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
@@ -4922,14 +4901,18 @@
                                                   <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel116" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Component id="jLabel109" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane26" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel109" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane26" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane27" min="-2" pref="574" max="-2" attributes="0"/>
                                   <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
@@ -4948,7 +4931,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel107" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jComboBox27" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton53" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -5016,17 +4998,12 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox27ActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton53">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Search"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton53ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel108">
           <Properties>
