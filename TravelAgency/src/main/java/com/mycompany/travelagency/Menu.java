@@ -588,13 +588,19 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane19 = new javax.swing.JScrollPane();
         jTable19 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jScrollPane20 = new javax.swing.JScrollPane();
         jTable20 = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        startDateTextField = new javax.swing.JTextField();
-        endDateTextField = new javax.swing.JTextField();
+        availableTripsPanel = new javax.swing.JPanel();
+        jLabel121 = new javax.swing.JLabel();
+        jComboBox28 = new javax.swing.JComboBox<>();
+        jLabel122 = new javax.swing.JLabel();
+        startDateTextField1 = new javax.swing.JTextField();
+        jLabel123 = new javax.swing.JLabel();
+        endDateTextField1 = new javax.swing.JTextField();
+        jButton51 = new javax.swing.JButton();
+        jLabel124 = new javax.swing.JLabel();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        jTable27 = new javax.swing.JTable();
         offersMenuPanel = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
@@ -690,6 +696,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem23 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -826,7 +833,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(branchesPanel, "card2");
@@ -933,7 +940,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton20)
                     .addComponent(jLabel31)
                     .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(336, Short.MAX_VALUE))
+                .addContainerGap(436, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(adminsPanel, "card3");
@@ -1058,7 +1065,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(406, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(destinationsPanel, "card4");
@@ -1180,7 +1187,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(driversPanelLayout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jComboBox22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(319, Short.MAX_VALUE))
+                .addContainerGap(419, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(driversPanel, "card5");
@@ -1287,7 +1294,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton44)
                     .addComponent(jLabel62)
                     .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(349, Short.MAX_VALUE))
+                .addContainerGap(449, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(itOfficersPanel, "card6");
@@ -1400,7 +1407,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(eventsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
                     .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(eventsPanel, "card7");
@@ -1500,7 +1507,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addComponent(jButton26)
-                .addContainerGap(322, Short.MAX_VALUE))
+                .addContainerGap(422, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(guidesPanel, "card8");
@@ -1594,7 +1601,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68)
                 .addComponent(jButton32)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addContainerGap(365, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(languagesPanel, "card9");
@@ -1694,7 +1701,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jButton29)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(managersPanel, "card10");
@@ -1816,7 +1823,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(offersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel57)
                         .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addContainerGap(481, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(offersPanel, "card11");
@@ -1915,7 +1922,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jButton17)
-                .addContainerGap(332, Short.MAX_VALUE))
+                .addContainerGap(432, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(phonesPanel, "card12");
@@ -2037,7 +2044,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(reservationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel52)
                         .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(292, Short.MAX_VALUE))
+                .addContainerGap(392, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(reservationsPanel, "card13");
@@ -2154,7 +2161,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(reservationOffersPanelLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jTextField43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(333, Short.MAX_VALUE))
+                .addContainerGap(433, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(reservationOffersPanel, "card14");
@@ -2320,7 +2327,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel49)
                     .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(tripsPanel, "card15");
@@ -2471,7 +2478,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(workersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(workersPanel, "card16");
@@ -2593,7 +2600,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addComponent(jButton50)
-                .addContainerGap(489, Short.MAX_VALUE))
+                .addContainerGap(589, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(travelToPanel, "card17");
@@ -2659,11 +2666,11 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
         jLabel2.setText("Branch Info");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("Worker branch info");
+        jLabel3.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel3.setText("Worker's  info");
 
         jTable19.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2686,11 +2693,114 @@ public class Menu extends javax.swing.JFrame {
         });
         jScrollPane19.setViewportView(jTable19);
 
-        jLabel4.setText("Start Date");
-
-        jLabel5.setText("End Date");
+        jLabel4.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
+        jLabel4.setText("Financial");
 
         jTable20.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Income", "Expenses", "Turnover"
+            }
+        ));
+        jTable20.getTableHeader().setReorderingAllowed(false);
+        jScrollPane20.setViewportView(jTable20);
+
+        javax.swing.GroupLayout branchInfoPanelLayout = new javax.swing.GroupLayout(branchInfoPanel);
+        branchInfoPanel.setLayout(branchInfoPanelLayout);
+        branchInfoPanelLayout.setHorizontalGroup(
+            branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(branchInfoPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 1110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(branchInfoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4)
+                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(branchInfoPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        branchInfoPanelLayout.setVerticalGroup(
+            branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(branchInfoPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, branchInfoPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(371, 371, 371))
+        );
+
+        branchesMenuPanel.add(branchInfoPanel, "card3");
+
+        jLabel121.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel121.setText("Choose branch : ");
+
+        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox28MouseClicked(evt);
+            }
+        });
+        jComboBox28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox28ActionPerformed(evt);
+            }
+        });
+
+        jLabel122.setText("Start Date");
+
+        startDateTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startDateTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel123.setText("End Date");
+
+        endDateTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endDateTextField1ActionPerformed(evt);
+            }
+        });
+
+        jButton51.setText("Show available trips");
+        jButton51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton51ActionPerformed(evt);
+            }
+        });
+
+        jLabel124.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel124.setText("Available Trips in given days");
+
+        jTable27.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -2709,97 +2819,56 @@ public class Menu extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane20.setViewportView(jTable20);
+        jScrollPane29.setViewportView(jTable27);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setText("Available Trips in given days");
-
-        jButton3.setText("Show available trips");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        startDateTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startDateTextFieldActionPerformed(evt);
-            }
-        });
-
-        endDateTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                endDateTextFieldActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout branchInfoPanelLayout = new javax.swing.GroupLayout(branchInfoPanel);
-        branchInfoPanel.setLayout(branchInfoPanelLayout);
-        branchInfoPanelLayout.setHorizontalGroup(
-            branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(branchInfoPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane20)
-                        .addGroup(branchInfoPanelLayout.createSequentialGroup()
-                            .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(branchInfoPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(79, 79, 79)
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(startDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(32, 32, 32)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(endDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton3))
-                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(17, Short.MAX_VALUE))
+        javax.swing.GroupLayout availableTripsPanelLayout = new javax.swing.GroupLayout(availableTripsPanel);
+        availableTripsPanel.setLayout(availableTripsPanelLayout);
+        availableTripsPanelLayout.setHorizontalGroup(
+            availableTripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(availableTripsPanelLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(availableTripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 1079, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel124)
+                    .addGroup(availableTripsPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel121)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel122)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(startDateTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel123)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(endDateTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton51)))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
-        branchInfoPanelLayout.setVerticalGroup(
-            branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(branchInfoPanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(startDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(endDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(branchInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+        availableTripsPanelLayout.setVerticalGroup(
+            availableTripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(availableTripsPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(availableTripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(availableTripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel122)
+                        .addComponent(startDateTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(availableTripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel123)
+                        .addComponent(endDateTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton51))
+                    .addGroup(availableTripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel121)
+                        .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(41, 41, 41)
+                .addComponent(jLabel124)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(723, Short.MAX_VALUE))
         );
 
-        branchesMenuPanel.add(branchInfoPanel, "card3");
+        branchesMenuPanel.add(availableTripsPanel, "card3");
 
         getContentPane().add(branchesMenuPanel, "card3");
 
@@ -2891,7 +2960,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addContainerGap(408, Short.MAX_VALUE))
         );
 
         getContentPane().add(offersMenuPanel, "card4");
@@ -2931,7 +3000,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(logsMenuPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addContainerGap(569, Short.MAX_VALUE))
         );
 
         getContentPane().add(logsMenuPanel, "card5");
@@ -3060,7 +3129,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel79)
                             .addComponent(jLabel86)))
                     .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(669, Short.MAX_VALUE))
+                .addContainerGap(769, Short.MAX_VALUE))
         );
 
         getContentPane().add(adminMenuPanel, "card6");
@@ -3235,7 +3304,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel98)
                             .addComponent(jLabel106)))
                     .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(595, Short.MAX_VALUE))
+                .addContainerGap(695, Short.MAX_VALUE))
         );
 
         getContentPane().add(driverMenuPanel, "card7");
@@ -3409,7 +3478,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel120)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
 
         getContentPane().add(GuideMenuPanel, "card8");
@@ -3580,6 +3649,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem17);
+
+        jMenuItem23.setText("Available Trips");
+        jMenuItem23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem23ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem23);
 
         jMenuBar1.add(jMenu2);
 
@@ -4454,147 +4531,6 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenu2ActionPerformed
     
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-        // TODO add your handling code here:
-        
-        //Because of combobox reset the value is null and we have an exception
-        //Use if statement to check when the combobox is not empty
-        if(jComboBox1.getSelectedItem() != null){
-            
-            String selectedItem = jComboBox1.getSelectedItem().toString();
-            
-        String procedureData = "call branchInfoData(" + selectedItem + ")";
-        String procedureTotalSalary = "call branchInfoTotalSalary(" + selectedItem + ")";
-        String procedureBrDetails = "call showBranchDetails(" + selectedItem + ")";
-        
-        try  {
-                Connection con = ConnectionToDb.connectMySqlDB();
-                
-                Statement stmt=con.createStatement();
-                ResultSet rs=stmt.executeQuery( procedureData );
-                
-                DefaultTableModel tbModelData = (DefaultTableModel)jTable17.getModel();
-                tbModelData.setRowCount(0);
-                
-                DefaultTableModel tbModelSalary = (DefaultTableModel)jTable19.getModel();
-                tbModelSalary.setRowCount(0);
-                
-                DefaultTableModel tbBrDetails = (DefaultTableModel)jTable18.getModel();
-                tbBrDetails.setRowCount(0);
-                
-                //Data Worker
-                while(rs.next()){
-                    String firstName = rs.getString("First Name");
-                    String lastName = rs.getString("Last Name");
-                    String salary = String.valueOf(rs.getDouble("Salary") );
-                    
-                    String tbData[] = {firstName, lastName, salary};
-                    
-                    tbModelData.addRow(tbData);
-                }
-                
-                //Total Salary
-                stmt=con.createStatement();
-                rs=stmt.executeQuery( procedureTotalSalary );
-                while(rs.next()){
-                    String totalSalary = String.valueOf(rs.getDouble("SUM(wrk_salary)") );
-                    
-                    String tbTotalSalary[] = {totalSalary};
-                    
-                    tbModelSalary.addRow(tbTotalSalary);
-                }
-                
-                //Branch details
-                stmt=con.createStatement();
-                rs=stmt.executeQuery( procedureBrDetails );
-                while(rs.next()){
-                    String code = String.valueOf(rs.getInt("Code") );
-                    String number = String.valueOf(rs.getInt("Number") );
-                    String street = rs.getString("Street");
-                    String city = rs.getString("City");
-                    String admin = rs.getString("admin (FN)");
-                    String lastName = rs.getString("Last name (LN)");
-                    String numOfRes = rs.getString("Num of reservations");
-                    String income = rs.getString("Income");
-                    
-                    String tbTotalSalary[] = {code, number, street, city, admin, lastName, numOfRes, income};
-                    
-                    tbBrDetails.addRow(tbTotalSalary);
-                }
-                
-            con.close();
-        }
-        catch(Exception e){ JFrame f=new JFrame();  
-    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
-        
-        }
-         
-        
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
-       
-    }//GEN-LAST:event_jComboBox1MouseClicked
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-            String startDate = startDateTextField.getText();
-            String endDate = endDateTextField.getText();
-            String brCode = jComboBox1.getSelectedItem().toString();
-            
-            String procedureShowAvailableTrips = "call showAvailableTrips(" + brCode + "," + " \" " + startDate + " \" " + ","  + " \" " + endDate +  " \" " + ")";
-            
-            try  {
-                Connection con = ConnectionToDb.connectMySqlDB();
-                
-                //Statement stmt = con.createStatement();
-                //ResultSet rs = stmt.executeQuery( procedureShowAvailableTrips );
-                
-                DefaultTableModel tbModelData = (DefaultTableModel)jTable20.getModel();
-                tbModelData.setRowCount(0);
-                
-                CallableStatement stmt = con.prepareCall(procedureShowAvailableTrips);
-                boolean results = stmt.execute();
-                while (results) {
-                    ResultSet rs = stmt.getResultSet();
-                    // process result set
-                    
-                    while(rs.next()){
-                        String tripCost = rs.getString("tripCost");
-                        String maxSeats = rs.getString("maxSeats");
-                        String reservCount = rs.getString("reservCount");
-                        String emptySeats = rs.getString("emptySeats");
-                        String drivLname = rs.getString("drivLname");
-                        String drivName = rs.getString("drivName");
-                        String GuideLname = rs.getString("GuideLname");
-                        String GuideName = rs.getString("GuideName");
-                        String departureDate = rs.getString("departureDate");
-                        String returnDate = rs.getString("returnDate");
-
-
-                        String tbData[] = {tripCost , maxSeats ,reservCount ,emptySeats ,drivLname ,drivName ,GuideLname , GuideName, departureDate, returnDate};
-
-                        tbModelData.addRow(tbData);
-                    }
-                    
-                    results = stmt.getMoreResults();
-                }
-  
-                con.close();
-            }
-            catch(Exception e){ JFrame f=new JFrame();  
-    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void startDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startDateTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_startDateTextFieldActionPerformed
-
-    private void endDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endDateTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_endDateTextFieldActionPerformed
-
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
         // TODO add your handling code here:       
     }//GEN-LAST:event_jMenu3ActionPerformed
@@ -7073,6 +7009,211 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBox27ActionPerformed
 
+    private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
+        // TODO add your handling code here:
+        dataMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        branchesMenuPanel.setVisible(true);
+        branchesMenuPanel.removeAll();
+        branchesMenuPanel.add(availableTripsPanel).setVisible(true);
+        jComboBox28.removeAllItems();
+        try  {
+                Connection con = ConnectionToDb.connectMySqlDB();
+                
+                /*Branch*/
+                Statement stmt=con.createStatement();
+                ResultSet rs=stmt.executeQuery("select br_code from branch");
+                
+                //Remove all items from combobox
+                
+                                
+                while(rs.next()){
+                    
+                    //String br_code = String.valueOf(rs.getInt("br_code") );
+                    String br_code = rs.getString("br_code");
+                    jComboBox28.addItem(br_code);
+                    
+                }
+                con.close();
+        }
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);}  
+    }//GEN-LAST:event_jMenuItem23ActionPerformed
+
+    private void jComboBox28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox28MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox28MouseClicked
+
+    private void jComboBox28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox28ActionPerformed
+        // TODO add your handling code here:
+        //For availabletripsBranch
+        
+        
+    }//GEN-LAST:event_jComboBox28ActionPerformed
+
+    private void startDateTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startDateTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_startDateTextField1ActionPerformed
+
+    private void endDateTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endDateTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_endDateTextField1ActionPerformed
+
+    private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
+        // TODO add your handling code here:
+            String startDate = startDateTextField1.getText();
+            String endDate = endDateTextField1.getText();
+            String brCode = jComboBox28.getSelectedItem().toString();
+            
+            String procedureShowAvailableTrips = "call showAvailableTrips(" + brCode + "," + " \" " + startDate + " \" " + ","  + " \" " + endDate +  " \" " + ")";
+            
+            try  {
+                Connection con = ConnectionToDb.connectMySqlDB();
+                
+                DefaultTableModel tbModelData = (DefaultTableModel)jTable27.getModel();
+                tbModelData.setRowCount(0);
+                
+                CallableStatement stmt = con.prepareCall(procedureShowAvailableTrips);
+                boolean results = stmt.execute();
+                while (results) {
+                    ResultSet rs = stmt.getResultSet();
+                    // process result set
+                    
+                    while(rs.next()){
+                        String tripCost = rs.getString("tripCost");
+                        String maxSeats = rs.getString("maxSeats");
+                        String reservCount = rs.getString("reservCount");
+                        String emptySeats = rs.getString("emptySeats");
+                        String drivLname = rs.getString("drivLname");
+                        String drivName = rs.getString("drivName");
+                        String GuideLname = rs.getString("GuideLname");
+                        String GuideName = rs.getString("GuideName");
+                        String departureDate = rs.getString("departureDate");
+                        String returnDate = rs.getString("returnDate");
+
+
+                        String tbData[] = {tripCost , maxSeats ,reservCount ,emptySeats ,drivLname ,drivName ,GuideLname , GuideName, departureDate, returnDate};
+
+                        tbModelData.addRow(tbData);
+                    }
+                    
+                    results = stmt.getMoreResults();
+                }
+  
+                con.close();
+            }
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
+        
+    }//GEN-LAST:event_jButton51ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+
+        //Because of combobox reset the value is null and we have an exception
+        //Use if statement to check when the combobox is not empty
+        if(jComboBox1.getSelectedItem() != null){
+
+            String selectedItem = jComboBox1.getSelectedItem().toString();
+
+            String workersInfoProc = "call branchInfo(" + selectedItem + ")";
+            String branchStatsProc = "call branch_stats(" + selectedItem + ")";
+            String branchDetails = "call showBranchDetails(" + selectedItem + ")";
+
+            try  {
+                Connection con = ConnectionToDb.connectMySqlDB();
+
+                CallableStatement stmt = con.prepareCall(workersInfoProc);
+                boolean results = stmt.execute();
+                
+                ResultSet rs = stmt.getResultSet();
+
+                DefaultTableModel tbModelWorkerInfo = (DefaultTableModel)jTable17.getModel();
+                tbModelWorkerInfo.setRowCount(0);
+                
+                DefaultTableModel tbBrDetails = (DefaultTableModel)jTable18.getModel();
+                tbBrDetails.setRowCount(0);
+
+                DefaultTableModel tbModelSalary = (DefaultTableModel)jTable19.getModel();
+                tbModelSalary.setRowCount(0);               
+                
+                DefaultTableModel tbModelFinancial = (DefaultTableModel)jTable20.getModel();
+                tbModelFinancial.setRowCount(0);
+
+                //Worker Dara
+                while(rs.next()){
+                    String firstName = rs.getString("First Name");
+                    String lastName = rs.getString("Last Name");
+                    String salary = String.valueOf(rs.getDouble("Salary") );
+
+                    String tbData[] = {firstName, lastName, salary};
+
+                    tbModelWorkerInfo.addRow(tbData);
+                }
+
+                //Total Salary
+                results = stmt.getMoreResults();
+                
+                if(results == true){
+                    rs = stmt.getResultSet();
+                    while(rs.next()){
+                        String total = rs.getString("SUM(wrk_salary)");
+                        
+                        
+                        String tbData[] = {total};
+                        tbModelSalary.addRow(tbData);
+                    }
+                }
+                
+
+                //Branch details
+                Statement stmt2 = con.createStatement();
+                ResultSet rs2 = stmt2.executeQuery(branchDetails);
+                
+                
+                while(rs2.next()){
+                    String code = String.valueOf(rs2.getInt("Code") );
+                    String number = String.valueOf(rs2.getInt("Number") );
+                    String street = rs2.getString("Street");
+                    String city = rs2.getString("City");
+                    String admin = rs2.getString("admin (FN)");
+                    String lastName = rs2.getString("Last name (LN)");
+                    String numOfRes = rs2.getString("Num of reservations");
+                    String income = rs2.getString("Income");
+
+                    String tbDetails[] = {code, number, street, city, admin, lastName, numOfRes, income};
+
+                    tbBrDetails.addRow(tbDetails);
+                }
+                
+                
+                Statement stmt3 = con.createStatement();
+                ResultSet rs3 = stmt3.executeQuery(branchStatsProc);
+                while(rs3.next()){
+                    String income = String.valueOf(rs3.getInt("Income"));
+                    String total_salaries = String.valueOf(rs3.getInt("expenses"));
+                    String turnover = String.valueOf(rs3.getInt("Turnover"));
+                    
+                     String tbStats[] = {income, total_salaries, turnover};
+                     tbModelFinancial.addRow(tbStats);
+
+                }
+
+                con.close();
+            }
+            catch(Exception e){ JFrame f=new JFrame();
+                JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);}
+
+        }
+
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
+
+    }//GEN-LAST:event_jComboBox1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -7112,6 +7253,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel GuideMenuPanel;
     private javax.swing.JPanel adminMenuPanel;
     private javax.swing.JPanel adminsPanel;
+    private javax.swing.JPanel availableTripsPanel;
     private javax.swing.JPanel branchInfoPanel;
     private javax.swing.JPanel branchesMenuPanel;
     private javax.swing.JPanel branchesPanel;
@@ -7119,7 +7261,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel destinationsPanel;
     private javax.swing.JPanel driverMenuPanel;
     private javax.swing.JPanel driversPanel;
-    private javax.swing.JTextField endDateTextField;
+    private javax.swing.JTextField endDateTextField1;
     private javax.swing.JPanel eventsPanel;
     private javax.swing.JPanel guidesPanel;
     private javax.swing.JPanel itOfficersPanel;
@@ -7145,7 +7287,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
@@ -7169,6 +7310,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton49;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton50;
+    private javax.swing.JButton jButton51;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -7193,6 +7335,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox25;
     private javax.swing.JComboBox<String> jComboBox26;
     private javax.swing.JComboBox<String> jComboBox27;
+    private javax.swing.JComboBox<String> jComboBox28;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
@@ -7225,6 +7368,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel124;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -7265,7 +7412,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -7276,7 +7422,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
@@ -7341,6 +7486,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
+    private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -7369,6 +7515,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane27;
     private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -7395,6 +7542,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTable jTable24;
     private javax.swing.JTable jTable25;
     private javax.swing.JTable jTable26;
+    private javax.swing.JTable jTable27;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
@@ -7455,7 +7603,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel phonesPanel;
     private javax.swing.JPanel reservationOffersPanel;
     private javax.swing.JPanel reservationsPanel;
-    private javax.swing.JTextField startDateTextField;
+    private javax.swing.JTextField startDateTextField1;
     private javax.swing.JPanel travelToPanel;
     private javax.swing.JPanel tripsPanel;
     private javax.swing.JPanel workersPanel;
