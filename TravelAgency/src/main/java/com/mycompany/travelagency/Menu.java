@@ -334,7 +334,8 @@ public class Menu extends javax.swing.JFrame {
                 }
                 con.close();
             }
-        catch(Exception e){ System.out.println(e);}  
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);  }  
         
     }
     
@@ -3714,7 +3715,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
     
@@ -3750,7 +3752,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
     
@@ -3777,7 +3780,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -3802,7 +3806,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -3858,7 +3863,8 @@ public class Menu extends javax.swing.JFrame {
                 
                 con.close();
             }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
         
         
@@ -3905,7 +3911,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){  JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -3947,7 +3954,8 @@ public class Menu extends javax.swing.JFrame {
             }
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
@@ -3989,7 +3997,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
             }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -4034,7 +4043,8 @@ public class Menu extends javax.swing.JFrame {
                 
                 con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem7ActionPerformed
     
@@ -4076,7 +4086,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
@@ -4128,7 +4139,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
@@ -4171,7 +4183,8 @@ public class Menu extends javax.swing.JFrame {
             }
             con.close();
             }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
@@ -4212,7 +4225,8 @@ public class Menu extends javax.swing.JFrame {
                 
                 con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
         
         
@@ -4259,7 +4273,8 @@ public class Menu extends javax.swing.JFrame {
          
             con.close();
             }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
@@ -4303,7 +4318,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
@@ -4371,7 +4387,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
@@ -4417,7 +4434,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem15ActionPerformed
     
@@ -4449,7 +4467,8 @@ public class Menu extends javax.swing.JFrame {
                 }
                 con.close();
         }
-        catch(Exception e){ System.out.println(e);}  
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);}  
         
         
     }//GEN-LAST:event_jMenuItem17ActionPerformed
@@ -4530,7 +4549,8 @@ public class Menu extends javax.swing.JFrame {
                 
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
         }
          
@@ -4587,7 +4607,8 @@ public class Menu extends javax.swing.JFrame {
   
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void startDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startDateTextFieldActionPerformed
@@ -4656,7 +4677,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -4752,7 +4774,8 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
         
         
@@ -4781,7 +4804,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -4871,7 +4895,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
         
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -4911,7 +4936,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -4940,7 +4966,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -4969,7 +4996,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
     }//GEN-LAST:event_jButton15ActionPerformed
@@ -5013,7 +5041,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5040,7 +5069,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5066,7 +5096,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5093,7 +5124,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
     }//GEN-LAST:event_jButton21ActionPerformed
@@ -5121,7 +5153,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5166,7 +5199,8 @@ public class Menu extends javax.swing.JFrame {
             isAdministrative = 0;
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton29ActionPerformed
 
@@ -5189,7 +5223,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.addRow(tbData);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);}    
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);}    
         
     }//GEN-LAST:event_jButton27ActionPerformed
 
@@ -5217,7 +5252,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5246,7 +5282,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5275,7 +5312,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5304,7 +5342,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
         
@@ -5329,7 +5368,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -5352,7 +5392,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton23ActionPerformed
 
@@ -5375,7 +5416,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton44ActionPerformed
 
@@ -5399,7 +5441,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton14ActionPerformed
 
@@ -5423,7 +5466,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton26ActionPerformed
 
@@ -5446,7 +5490,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
@@ -5468,7 +5513,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton41ActionPerformed
     
@@ -5492,7 +5538,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
         
     }//GEN-LAST:event_jButton17ActionPerformed
@@ -5517,7 +5564,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton38ActionPerformed
 
@@ -5541,7 +5589,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton47ActionPerformed
 
@@ -5564,7 +5613,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
@@ -5597,7 +5647,9 @@ public class Menu extends javax.swing.JFrame {
             
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ 
+                    System.out.println(e);
+                    } 
         
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
@@ -5657,9 +5709,12 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
-        }
+            catch(Exception e){ JFrame f=new JFrame();  
+                        JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);
+                }
+            } 
         
+
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -5739,7 +5794,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
         
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -5805,7 +5861,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
     }//GEN-LAST:event_jButton22ActionPerformed
     
@@ -5872,7 +5929,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
     }//GEN-LAST:event_jButton43ActionPerformed
 
@@ -5942,7 +6000,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e) {  JFrame f=new JFrame();  
+                        JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
     }//GEN-LAST:event_jButton13ActionPerformed
     
@@ -5995,7 +6054,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
     }//GEN-LAST:event_jButton25ActionPerformed
 
@@ -6047,7 +6107,9 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+                                JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);
+            }         
         }
     }//GEN-LAST:event_jButton31ActionPerformed
 
@@ -6102,7 +6164,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+                JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
         
     }//GEN-LAST:event_jButton28ActionPerformed
@@ -6178,7 +6241,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE); } 
         }
     }//GEN-LAST:event_jButton40ActionPerformed
 
@@ -6234,7 +6298,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
@@ -6310,7 +6375,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE); } 
         }
     }//GEN-LAST:event_jButton37ActionPerformed
 
@@ -6387,7 +6453,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE); } 
         }
     }//GEN-LAST:event_jButton46ActionPerformed
 
@@ -6417,7 +6484,8 @@ public class Menu extends javax.swing.JFrame {
                 }
                 
             }
-            catch(Exception e){ System.out.println(e);}
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);}
             if(a == 0){
                 try  {
                     
@@ -6502,7 +6570,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             }
             
             a = 0;
@@ -6567,7 +6636,8 @@ public class Menu extends javax.swing.JFrame {
                 
                 con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
@@ -6594,7 +6664,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.addRow(tbData);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             
         }
     }//GEN-LAST:event_jButton48ActionPerformed
@@ -6665,7 +6736,8 @@ public class Menu extends javax.swing.JFrame {
 
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         }
     }//GEN-LAST:event_jButton49ActionPerformed
 
@@ -6688,7 +6760,8 @@ public class Menu extends javax.swing.JFrame {
             tbModel.removeRow(selectedRow);
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton50ActionPerformed
 
@@ -6712,7 +6785,8 @@ public class Menu extends javax.swing.JFrame {
                 tbModel.removeRow(selectedRow);
                 con.close();
             }
-            catch(Exception e){ System.out.println(e);} 
+            catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
             }
         else{
             JFrame f=new JFrame();  
@@ -6765,7 +6839,8 @@ public class Menu extends javax.swing.JFrame {
             isAdministrative = 0;
             con.close();
         }
-        catch(Exception e){ System.out.println(e);} 
+        catch(Exception e){ JFrame f=new JFrame();  
+    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
         
     }//GEN-LAST:event_jButton8ActionPerformed
     private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
