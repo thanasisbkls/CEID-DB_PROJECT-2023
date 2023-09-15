@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.travelagency;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 
@@ -30,6 +32,9 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        Toolkit toolKit = getToolkit();
+        Dimension size = toolKit.getScreenSize();
+        setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
             
             //here sonoo is database name, root is username and password
             try  {
@@ -708,6 +713,9 @@ public class Menu extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(1300, 780));
+        setSize(new java.awt.Dimension(780, 600));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -715,6 +723,7 @@ public class Menu extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new java.awt.CardLayout());
 
+        dataMenuPanel.setPreferredSize(new java.awt.Dimension(1149, 780));
         dataMenuPanel.setLayout(new java.awt.CardLayout());
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -839,7 +848,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(354, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(branchesPanel, "card2");

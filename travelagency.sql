@@ -1133,36 +1133,6 @@ END$
 
 delimiter ;
 
-/*Add procedure branchInfoData and branchInfoSalary in order to get 1 resultSet in gui*/
-
-/*Branch info data*/
-/*Return the data table*/
-drop procedure if exists branchInfoData;
-
-delimiter $
-CREATE PROCEDURE branchInfoData (brCode INT)
-BEGIN
-    SELECT wrk_name AS 'First Name', wrk_lame AS 'Last Name', wrk_salary AS 'Salary'
-    FROM worker
-    WHERE wrk_br_code = brCode;
-END$
-
-delimiter ;
-
-/*Branch info salary*/
-/*Return the total salary of workers in given branch*/
-drop procedure if exists branchInfoTotalSalary;
-
-delimiter $
-CREATE PROCEDURE branchInfoTotalSalary (brCode INT)
-BEGIN
-    SELECT SUM(wrk_salary)
-    FROM worker
-    WHERE wrk_br_code = brCode;
-END$
-
-delimiter ;
-
 
 drop procedure if exists addIT;
 delimiter $
