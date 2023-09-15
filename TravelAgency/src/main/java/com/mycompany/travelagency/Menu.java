@@ -705,8 +705,14 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem20 = new javax.swing.JMenuItem();
         jMenuItem21 = new javax.swing.JMenuItem();
         jMenuItem22 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.CardLayout());
 
         dataMenuPanel.setLayout(new java.awt.CardLayout());
@@ -3721,6 +3727,14 @@ public class Menu extends javax.swing.JFrame {
         jMenu5.add(jMenuItem22);
 
         jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("Log Out");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jMenu6MousePressed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
 
@@ -7214,6 +7228,47 @@ public class Menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jComboBox1MouseClicked
 
+    private void jMenu6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MousePressed
+        // TODO add your handling code here:
+          JFrame logoutFrame = new JFrame();
+        int choice = JOptionPane.showConfirmDialog(logoutFrame, "Are you sure you want to logout?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        if (choice == JOptionPane.YES_OPTION) {
+            try{
+                Connection con = ConnectionToDb.connectMySqlDB();
+            
+            //Delete temporary
+            Statement stmt3=con.createStatement();
+            stmt3.execute("truncate table templogin;");
+            dispose();
+            new Login().setVisible(true);
+            }catch(Exception e){System.out.println(e);}
+        }else
+            logoutFrame.dispose();
+      
+    }//GEN-LAST:event_jMenu6MousePressed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+         JFrame exitFrame = new JFrame();
+         int choice = JOptionPane.showConfirmDialog(exitFrame, 
+            "Are you sure you want to close this window?", "Close Window?", 
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE);
+        if (choice == JOptionPane.YES_OPTION){
+            try{
+                Connection con = ConnectionToDb.connectMySqlDB();
+            
+            //Delete temporary
+            Statement stmt=con.createStatement();
+            stmt.execute("truncate table templogin;");
+            System.exit(0);
+            
+            }catch(Exception e){System.out.println(e);}
+            System.exit(0);
+        }else
+            exitFrame.dispose();
+    }//GEN-LAST:event_formWindowClosing
+
     /**
      * @param args the command line arguments
      */
@@ -7470,6 +7525,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
