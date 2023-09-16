@@ -6770,8 +6770,10 @@ public class Menu extends javax.swing.JFrame {
             }
           
             con.close();
-        }catch(Exception e){ JFrame f=new JFrame();  
-    JOptionPane.showMessageDialog(f,e,"Alert",JOptionPane.WARNING_MESSAGE);} 
+        }catch(SQLException e){ 
+            JFrame f=new JFrame();    
+            JOptionPane.showMessageDialog(f,e.getMessage(),"Alert",JOptionPane.WARNING_MESSAGE);   
+        } 
         
         
     }//GEN-LAST:event_jButton20ActionPerformed

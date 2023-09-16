@@ -14,12 +14,15 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Toolkit;
 import java.awt.Dimension;
+import java.sql.CallableStatement;
+import java.sql.SQLException;
+import java.sql.Types;
 /**
  *
  * @author Baknis
  */
 public class Login extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Login
      */
@@ -131,56 +134,40 @@ public class Login extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Menu m = new Menu();
+        
         try  {
-            //Class.forName("com.mysql.jdbc.Driver");
-            //Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
             Connection con = ConnectionToDb.connectMySqlDB();
+           
+            CallableStatement cStmt = con.prepareCall("{call getItID(?, ?, ?)}");
+            cStmt.setString(1, jTextField1.getText());
+            char[] pass = jPasswordField1.getPassword();
+            String password = new String(pass);
+            cStmt.setString(2, password);
+            cStmt.registerOutParameter(3, Types.VARCHAR);
+            cStmt.execute();
             
-            //Delete temporary
-//            Statement stmt3=con.createStatement();
-//            stmt3.execute("truncate table templogin;");
-            
-            Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("select * from itOfficer");
-            
-            int correctUser = 0;
-            
-            while(rs.next()){
-                
-                String it_AT = rs.getString("it_AT");
-                String password = rs.getString("password");
-                char[] ch = password.toCharArray();
-                
-                if( jTextField1.getText().equals(it_AT)  && Arrays.equals(ch, jPasswordField1.getPassword())  ){
-                    correctUser = 1;
-                    Statement stmt2=con.createStatement();
-                    String insertTempIt = "insert into templogin values ('" + it_AT  +"');";
-                    stmt2.execute(insertTempIt);
+            String loginResult = cStmt.getString(3);
+            if (loginResult != null){
+            // edw kanei switch to panel
+            Menu m = new Menu();
+            m.setTitle("IT: " + loginResult);
+            m.show();
+            dispose();
                     
-                    
-                    m.show();
-                    dispose();
-                    
-                    break;
-                }
-            
+            }else {
+                //edw petaei error message kai stamataei
+                JFrame f;
+                f=new JFrame();
+                JOptionPane.showMessageDialog(f, "Incorrect username or password!", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            if(correctUser == 0){
-                 JFrame f;
-                 f=new JFrame();  
-                 JOptionPane.showMessageDialog(f,"Wrong username or password.","Alert",JOptionPane.WARNING_MESSAGE);     
-            }
-            correctUser = 0;
             con.close();
-        }
-        catch(Exception e){ System.out.println(e);} 
         
-
-        
-        
+        }catch (SQLException a) {
+            System.out.print(a);
+                }       
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
