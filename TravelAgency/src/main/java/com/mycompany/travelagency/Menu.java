@@ -931,7 +931,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOGISTICS", "ADMINISTRATIVE", "ACCOUNTING'" }));
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox5ActionPerformed(evt);
@@ -1044,8 +1043,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel21.setText("dst_language");
 
         jLabel22.setText("dst_location");
-
-        jComboBox20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOCAL ", "ABROAD" }));
 
         javax.swing.GroupLayout destinationsPanelLayout = new javax.swing.GroupLayout(destinationsPanel);
         destinationsPanel.setLayout(destinationsPanelLayout);
@@ -1167,10 +1164,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel35.setText("drv_experience");
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D" }));
-
-        jComboBox22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOCAL", "ABROAD" }));
 
         javax.swing.GroupLayout driversPanelLayout = new javax.swing.GroupLayout(driversPanel);
         driversPanel.setLayout(driversPanelLayout);
@@ -3841,7 +3834,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu5.setText("Workers");
 
-        jMenuItem20.setText("Admin");
+        jMenuItem20.setText("Admin Card");
         jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem20ActionPerformed(evt);
@@ -3849,7 +3842,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem20);
 
-        jMenuItem21.setText("Driver");
+        jMenuItem21.setText("Driver Card");
         jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem21ActionPerformed(evt);
@@ -3857,7 +3850,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem21);
 
-        jMenuItem22.setText("Guide");
+        jMenuItem22.setText("Guide Card");
         jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem22ActionPerformed(evt);
@@ -3893,6 +3886,7 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(adminsPanel).setVisible(true);
         
         jComboBox4.removeAllItems();
+        jComboBox5.removeAllItems();
         
         try  {
 //            Class.forName("com.mysql.jdbc.Driver");
@@ -3922,6 +3916,16 @@ public class Menu extends javax.swing.JFrame {
                 jComboBox4.addItem(br_code);
 
             }
+            
+            rs=stmt.executeQuery("select distinct adm_type from admin");
+            while(rs.next()){
+
+                
+                String admType = rs.getString("adm_type");
+                jComboBox5.addItem(admType);
+
+            }
+            
             
             con.close();
         }
@@ -4056,6 +4060,8 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.removeAll();
         dataMenuPanel.add(destinationsPanel).setVisible(true);
         
+        jComboBox20.removeAllItems();
+        
         try  {
                 Connection con = ConnectionToDb.connectMySqlDB();
         
@@ -4075,6 +4081,12 @@ public class Menu extends javax.swing.JFrame {
                     //DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
                     
                     tbModel.addRow(tbData);
+                }
+                
+                rs = stmt.executeQuery("select distinct dst_rtype from destination");
+                while(rs.next()){
+                    String dst = rs.getString("dst_rtype");
+                    jComboBox20.addItem(dst);
                 }
                 
                 con.close();
@@ -4100,6 +4112,8 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(driversPanel).setVisible(true);
         
         jComboBox6.removeAllItems();
+        jComboBox21.removeAllItems();
+        jComboBox22.removeAllItems();
         
         try  {
             Connection con = ConnectionToDb.connectMySqlDB();
@@ -4126,6 +4140,24 @@ public class Menu extends javax.swing.JFrame {
                 //String br_code = String.valueOf(rs.getInt("br_code") );
                 String br_code = rs.getString("wrk_AT");
                 jComboBox6.addItem(br_code);
+
+            }
+            
+            rs=stmt.executeQuery("select distinct drv_license from driver");
+            while(rs.next()){
+
+                //String br_code = String.valueOf(rs.getInt("br_code") );
+                String license = rs.getString("drv_license");
+                jComboBox21.addItem(license);
+
+            }
+            
+            rs=stmt.executeQuery("select distinct drv_route from driver");
+            while(rs.next()){
+
+                //String br_code = String.valueOf(rs.getInt("br_code") );
+                String route = rs.getString("drv_route");
+                jComboBox22.addItem(route);
 
             }
             
