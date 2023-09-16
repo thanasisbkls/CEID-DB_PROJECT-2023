@@ -677,7 +677,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel95 = new javax.swing.JLabel();
         jScrollPane25 = new javax.swing.JScrollPane();
         jTable24 = new javax.swing.JTable();
-        GuideMenuPanel = new javax.swing.JPanel();
+        guideMenuPanel = new javax.swing.JPanel();
         jLabel107 = new javax.swing.JLabel();
         jComboBox27 = new javax.swing.JComboBox<>();
         jLabel108 = new javax.swing.JLabel();
@@ -3518,92 +3518,92 @@ public class Menu extends javax.swing.JFrame {
         jLabel120.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jLabel120.setText("CV");
 
-        javax.swing.GroupLayout GuideMenuPanelLayout = new javax.swing.GroupLayout(GuideMenuPanel);
-        GuideMenuPanel.setLayout(GuideMenuPanelLayout);
-        GuideMenuPanelLayout.setHorizontalGroup(
-            GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GuideMenuPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout guideMenuPanelLayout = new javax.swing.GroupLayout(guideMenuPanel);
+        guideMenuPanel.setLayout(guideMenuPanelLayout);
+        guideMenuPanelLayout.setHorizontalGroup(
+            guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guideMenuPanelLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel120)
-                    .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane28)
-                        .addGroup(GuideMenuPanelLayout.createSequentialGroup()
-                            .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(GuideMenuPanelLayout.createSequentialGroup()
-                                        .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(guideMenuPanelLayout.createSequentialGroup()
+                            .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(guideMenuPanelLayout.createSequentialGroup()
+                                        .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel111)
                                             .addComponent(jLabel110)
-                                            .addGroup(GuideMenuPanelLayout.createSequentialGroup()
-                                                .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(guideMenuPanelLayout.createSequentialGroup()
+                                                .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel107)
                                                     .addComponent(jLabel108))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jComboBox27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(jLabel112))
                                         .addGap(178, 178, 178))
-                                    .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(GuideMenuPanelLayout.createSequentialGroup()
+                                    .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(guideMenuPanelLayout.createSequentialGroup()
                                             .addComponent(jLabel113)
-                                            .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(GuideMenuPanelLayout.createSequentialGroup()
+                                            .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(guideMenuPanelLayout.createSequentialGroup()
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel115)
                                                         .addComponent(jLabel114))
                                                     .addGap(145, 145, 145))
-                                                .addGroup(GuideMenuPanelLayout.createSequentialGroup()
+                                                .addGroup(guideMenuPanelLayout.createSequentialGroup()
                                                     .addGap(104, 104, 104)
                                                     .addComponent(jLabel118)
                                                     .addGap(0, 0, Short.MAX_VALUE))))
-                                        .addGroup(GuideMenuPanelLayout.createSequentialGroup()
+                                        .addGroup(guideMenuPanelLayout.createSequentialGroup()
                                             .addGap(0, 0, Short.MAX_VALUE)
-                                            .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jLabel117)
                                                 .addComponent(jLabel116))
                                             .addGap(146, 146, 146))))
-                                .addGroup(GuideMenuPanelLayout.createSequentialGroup()
-                                    .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(guideMenuPanelLayout.createSequentialGroup()
+                                    .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel109, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(85, 85, 85)))
-                            .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel119)))))
                 .addContainerGap(321, Short.MAX_VALUE))
         );
-        GuideMenuPanelLayout.setVerticalGroup(
-            GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(GuideMenuPanelLayout.createSequentialGroup()
+        guideMenuPanelLayout.setVerticalGroup(
+            guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(guideMenuPanelLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel107)
                     .addComponent(jComboBox27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel108)
                     .addComponent(jLabel119))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(GuideMenuPanelLayout.createSequentialGroup()
-                        .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(guideMenuPanelLayout.createSequentialGroup()
+                        .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel109)
                             .addComponent(jLabel114))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel110)
                             .addComponent(jLabel115))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel111)
                             .addComponent(jLabel116))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel112)
                             .addComponent(jLabel117))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(GuideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(guideMenuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel113)
                             .addComponent(jLabel118))
                         .addGap(18, 18, 18)
@@ -3616,7 +3616,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(382, Short.MAX_VALUE))
         );
 
-        getContentPane().add(GuideMenuPanel, "card8");
+        getContentPane().add(guideMenuPanel, "card8");
 
         jMenu1.setText("Data");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -3872,12 +3872,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(adminsPanel).setVisible(true);
+        
         jComboBox4.removeAllItems();
         
         try  {
@@ -3918,13 +3922,16 @@ public class Menu extends javax.swing.JFrame {
     
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(branchesPanel).setVisible(true);
-        
+                
         try  {
 //            Class.forName("com.mysql.jdbc.Driver");
 //            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
@@ -4029,10 +4036,13 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(destinationsPanel).setVisible(true);
         
@@ -4069,12 +4079,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+       dataMenuPanel.setVisible(true);
         branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
         offersMenuPanel.setVisible(false);
-        dataMenuPanel.setVisible(true);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(driversPanel).setVisible(true);
+        
         jComboBox6.removeAllItems();
         
         try  {
@@ -4114,10 +4128,13 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+       dataMenuPanel.setVisible(true);
         branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
         offersMenuPanel.setVisible(false);
-        dataMenuPanel.setVisible(true);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(eventsPanel).setVisible(true);
         jComboBox15.removeAllItems();
@@ -4157,10 +4174,13 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(guidesPanel).setVisible(true);
         jComboBox7.removeAllItems();
@@ -4200,14 +4220,17 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(itOfficersPanel).setVisible(true);
-        jComboBox29.removeAllItems();
         
+        jComboBox29.removeAllItems();
         jComboBox3.removeAllItems();
         try  {
                 Connection con = ConnectionToDb.connectMySqlDB();
@@ -4252,12 +4275,16 @@ public class Menu extends javax.swing.JFrame {
     
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(languagesPanel).setVisible(true);
+        
         jComboBox10.removeAllItems();
         
         try  {
@@ -4295,12 +4322,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(managersPanel).setVisible(true);
+        
         jComboBox8.removeAllItems();
         jComboBox9.removeAllItems();
         
@@ -4348,12 +4379,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(offersPanel).setVisible(true);
+        
         jComboBox16.removeAllItems();
         
         try  {
@@ -4392,12 +4427,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(phonesPanel).setVisible(true);
+        
         jComboBox3.removeAllItems();
         try  {
                 Connection con = ConnectionToDb.connectMySqlDB();
@@ -4438,12 +4477,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(reservationsPanel).setVisible(true);
+        
         jComboBox14.removeAllItems();
         try  {
             Connection con = ConnectionToDb.connectMySqlDB();
@@ -4482,12 +4525,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(reservationOffersPanel).setVisible(true);
+        
         jComboBox18.removeAllItems();
         
         try  {
@@ -4527,12 +4574,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(tripsPanel).setVisible(true);
+        
         jComboBox11.removeAllItems();
         jComboBox12.removeAllItems();
         jComboBox13.removeAllItems();
@@ -4596,10 +4647,13 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(workersPanel).setVisible(true);
         jComboBox2.removeAllItems();
@@ -4644,9 +4698,12 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         // TODO add your handling code here:
         dataMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         branchesMenuPanel.setVisible(true);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         branchesMenuPanel.removeAll();
         branchesMenuPanel.add(branchInfoPanel).setVisible(true);
         jComboBox1.removeAllItems();
@@ -4749,11 +4806,13 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
         // TODO add your handling code here:
-         dataMenuPanel.setVisible(false);
+        dataMenuPanel.setVisible(false);
         branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
         offersMenuPanel.setVisible(true);
-        
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);       
         
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
@@ -5621,12 +5680,13 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
         // TODO add your handling code here:
-        
+        dataMenuPanel.setVisible(false);
         branchesMenuPanel.setVisible(false);
         offersMenuPanel.setVisible(false);
-        dataMenuPanel.setVisible(false);
         logsMenuPanel.setVisible(true);
-        
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);        
         
         try  {
             Connection con = ConnectionToDb.connectMySqlDB();
@@ -6503,12 +6563,16 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(true);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         dataMenuPanel.removeAll();
         dataMenuPanel.add(travelToPanel).setVisible(true);
+        
         jComboBox23.removeAllItems();
         jComboBox24.removeAllItems();
         
@@ -6756,11 +6820,14 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
         // TODO add your handling code here:
         // Admin Card
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(false);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
         adminMenuPanel.setVisible(true);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
+       
         jComboBox25.removeAllItems();
         
         
@@ -6825,12 +6892,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
         // TODO add your handling code here:
+       dataMenuPanel.setVisible(false);
         branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
         offersMenuPanel.setVisible(false);
-        dataMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
         adminMenuPanel.setVisible(false);
         driverMenuPanel.setVisible(true);
+        guideMenuPanel.setVisible(false);
+        
         jComboBox26.removeAllItems();
         
         try{
@@ -6850,13 +6919,14 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
         // TODO add your handling code here:
         // TODO add your handling code here:
-        branchesMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         dataMenuPanel.setVisible(false);
+        branchesMenuPanel.setVisible(false);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
         adminMenuPanel.setVisible(false);
         driverMenuPanel.setVisible(false);
-        GuideMenuPanel.setVisible(true);
+        guideMenuPanel.setVisible(true);
+        
         jComboBox27.removeAllItems();
         
         try{
@@ -7010,11 +7080,15 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
         // TODO add your handling code here:
         dataMenuPanel.setVisible(false);
-        logsMenuPanel.setVisible(false);
-        offersMenuPanel.setVisible(false);
         branchesMenuPanel.setVisible(true);
+        offersMenuPanel.setVisible(false);
+        logsMenuPanel.setVisible(false);
+        adminMenuPanel.setVisible(false);
+        driverMenuPanel.setVisible(false);
+        guideMenuPanel.setVisible(false);
         branchesMenuPanel.removeAll();
         branchesMenuPanel.add(availableTripsPanel).setVisible(true);
+        
         jComboBox28.removeAllItems();
         try  {
                 Connection con = ConnectionToDb.connectMySqlDB();
@@ -7424,7 +7498,6 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel GuideMenuPanel;
     private javax.swing.JPanel adminMenuPanel;
     private javax.swing.JPanel adminsPanel;
     private javax.swing.JPanel availableTripsPanel;
@@ -7437,6 +7510,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel driversPanel;
     private javax.swing.JTextField endDateTextField1;
     private javax.swing.JPanel eventsPanel;
+    private javax.swing.JPanel guideMenuPanel;
     private javax.swing.JPanel guidesPanel;
     private javax.swing.JPanel itOfficersPanel;
     private javax.swing.JButton jButton1;
