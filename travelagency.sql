@@ -684,7 +684,7 @@ BEGIN
             DELETE admin FROM admin
             INNER JOIN worker ON admin.adm_AT = worker.wrk_AT
             WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
-            select concat(first_name, ' ', last_name, ' ', 'with AT: ', @AT, 'deleted successfully');
+            select concat(first_name, ' ', last_name, ' ', 'with AT: ', @AT, ' deleted successfully');
             #select 'not null';
         END IF;
 

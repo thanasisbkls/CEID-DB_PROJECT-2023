@@ -2998,7 +2998,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Cantarell", 1, 18)); // NOI18N
-        jLabel7.setText("Costumer Name:");
+        jLabel7.setText("Customer Name:");
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
