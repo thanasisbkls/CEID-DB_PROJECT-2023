@@ -11,6 +11,8 @@ package com.mycompany.travelagency;
 public class TravelAgency {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Login app = new Login();
+        app.show();
+        app.setVisible(true);
     }
 }

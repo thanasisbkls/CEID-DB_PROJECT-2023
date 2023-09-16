@@ -134,10 +134,9 @@ public class Login extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
         try  {
+            //Establish connection to the database
             Connection con = ConnectionToDb.connectMySqlDB();
-           
             CallableStatement cStmt = con.prepareCall("{call getItID(?, ?, ?)}");
             cStmt.setString(1, jTextField1.getText());
             char[] pass = jPasswordField1.getPassword();
@@ -147,24 +146,25 @@ public class Login extends javax.swing.JFrame {
             cStmt.execute();
             
             String loginResult = cStmt.getString(3);
+            //Check if itOfficer or not and proceed accordingly
             if (loginResult != null){
             // edw kanei switch to panel
-            Menu m = new Menu();
-            m.setTitle("IT: " + loginResult);
-            m.show();
-            dispose();
-                    
+                Menu m = new Menu();
+                m.setTitle("IT: " + loginResult);
+                m.setVisible(true);
+                dispose();
             }else {
                 //edw petaei error message kai stamataei
                 JFrame f;
                 f=new JFrame();
                 JOptionPane.showMessageDialog(f, "Incorrect username or password!", "Error", JOptionPane.ERROR_MESSAGE);
             }
+            //Close connection
             con.close();
         
-        }catch (SQLException a) {
+        }catch (SQLException a){
             System.out.print(a);
-                }       
+        }       
     }//GEN-LAST:event_jButton1ActionPerformed
     
     

@@ -791,7 +791,7 @@ begin
     select tempID into testvalue from templogin;
     if(testvalue is not null) then
         insert into log
-        set logdescrc = 'Deleted a trip.',log_ID_AT=@loginID,log_date=now();
+        set logdescrc = 'Deleted a trip.',log_ID_AT=testvalue,log_date=now();
     else
         signal sqlstate value '45000'
         set message_text = 'Error!You have to login as It Officer.';
