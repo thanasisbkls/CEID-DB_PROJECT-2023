@@ -1003,9 +1003,9 @@ begin
     if(testvalue is not null) then
         insert into log
         set logdescrc = 'Deleted a destination.',log_ID_AT=testvalue,log_date=now();
-    -- else
-    --     signal sqlstate value '45000'
-    --     set message_text = 'Error!You have to login as It Officer.';
+    else
+        signal sqlstate value '45000'
+        set message_text = 'Error!You have to login as It Officer.';
     end if;
 
 end $
