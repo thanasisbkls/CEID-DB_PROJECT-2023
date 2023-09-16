@@ -679,8 +679,8 @@ BEGIN
 
         -- Cannot be deleted
         IF @is_administrative > 0 THEN
-        SELECT concat(first_name, ' ', last_name, 'with AT:', @AT, ' is an administrator of a branch and cannot be deleted.') AS result;
-
+            signal sqlstate value '45000'
+            set message_text = concat(first_name, ' ', last_name, 'with AT:', @AT, ' is an administrator of a branch and cannot be deleted.');
         -- Else delete
         ELSE
             DELETE admin FROM admin
