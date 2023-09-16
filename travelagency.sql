@@ -642,8 +642,6 @@ begin
 
             select tripCost, maxSeats, reservCount, emptySeats, drivLname,
                 drivName, GuideLname, GuideName, departureDate, returnDate;
-        else
-            select null; #why?
         end if;
     until (not_found=1)
     end repeat;

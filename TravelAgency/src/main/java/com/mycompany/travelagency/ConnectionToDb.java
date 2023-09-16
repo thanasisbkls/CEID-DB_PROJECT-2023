@@ -9,7 +9,7 @@ import java.sql.*;
 public class ConnectionToDb {
     private static final String URL = "jdbc:mysql://localhost:3306/travelagency";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "PaSS123_word";
+    private static final String PASSWORD = "password";
     //Connection con = null;
 
     public static Connection connectMySqlDB() {

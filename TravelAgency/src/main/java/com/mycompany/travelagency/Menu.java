@@ -874,7 +874,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(branchesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(branchesPanel, "card2");
@@ -985,7 +985,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jButton20)
                     .addComponent(jLabel31)
                     .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addContainerGap(482, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(adminsPanel, "card3");
@@ -1108,7 +1108,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(440, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(destinationsPanel, "card4");
@@ -1177,7 +1177,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(driversPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                     .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(115, 115, 115)
                 .addGroup(driversPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1226,7 +1226,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(driversPanelLayout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jComboBox22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addContainerGap(466, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(driversPanel, "card5");
@@ -1438,7 +1438,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel134)
                     .addComponent(jTextField47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(458, Short.MAX_VALUE))
+                .addContainerGap(477, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(itOfficersPanel, "card6");
@@ -1551,7 +1551,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(eventsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
                     .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(425, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(eventsPanel, "card7");
@@ -1651,7 +1651,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addComponent(jButton26)
-                .addContainerGap(456, Short.MAX_VALUE))
+                .addContainerGap(471, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(guidesPanel, "card8");
@@ -1745,7 +1745,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68)
                 .addComponent(jButton32)
-                .addContainerGap(399, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(languagesPanel, "card9");
@@ -1845,7 +1845,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(jButton29)
-                .addContainerGap(428, Short.MAX_VALUE))
+                .addContainerGap(443, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(managersPanel, "card10");
@@ -1931,15 +1931,13 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField35)
                     .addComponent(jTextField36, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
                 .addGap(84, 84, 84)
+                .addGroup(offersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
                 .addGroup(offersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(offersPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(offersPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         offersPanelLayout.setVerticalGroup(
@@ -1967,7 +1965,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(offersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel57)
                         .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(515, Short.MAX_VALUE))
+                .addContainerGap(527, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(offersPanel, "card11");
@@ -2066,7 +2064,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jButton17)
-                .addContainerGap(466, Short.MAX_VALUE))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(phonesPanel, "card12");
@@ -2124,8 +2122,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel53.setText("res_lname");
 
         jLabel54.setText("res_isadult");
-
-        jComboBox19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADULT", "MINOR" }));
 
         javax.swing.GroupLayout reservationsPanelLayout = new javax.swing.GroupLayout(reservationsPanel);
         reservationsPanel.setLayout(reservationsPanelLayout);
@@ -2188,7 +2184,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(reservationsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel52)
                         .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addContainerGap(438, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(reservationsPanel, "card13");
@@ -2305,7 +2301,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(reservationOffersPanelLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jTextField43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(467, Short.MAX_VALUE))
+                .addContainerGap(479, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(reservationOffersPanel, "card14");
@@ -2471,7 +2467,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel49)
                     .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(356, Short.MAX_VALUE))
+                .addContainerGap(371, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(tripsPanel, "card15");
@@ -2622,7 +2618,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(workersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(353, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(workersPanel, "card16");
@@ -2744,7 +2740,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(4, 4, 4)
                 .addComponent(jButton50)
-                .addContainerGap(623, Short.MAX_VALUE))
+                .addContainerGap(638, Short.MAX_VALUE))
         );
 
         dataMenuPanel.add(travelToPanel, "card17");
@@ -3019,7 +3015,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel124)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(757, Short.MAX_VALUE))
+                .addContainerGap(761, Short.MAX_VALUE))
         );
 
         branchesMenuPanel.add(availableTripsPanel, "card3");
@@ -3116,7 +3112,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(487, Short.MAX_VALUE))
+                .addContainerGap(492, Short.MAX_VALUE))
         );
 
         getContentPane().add(offersMenuPanel, "card4");
@@ -3172,7 +3168,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(286, Short.MAX_VALUE))
         );
 
         getContentPane().add(logsMenuPanel, "card5");
@@ -3295,7 +3291,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel79)
                             .addComponent(jLabel86)))
                     .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(829, Short.MAX_VALUE))
+                .addContainerGap(825, Short.MAX_VALUE))
         );
 
         getContentPane().add(adminMenuPanel, "card6");
@@ -3453,7 +3449,7 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel98)
                             .addComponent(jLabel106)))
                     .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(732, Short.MAX_VALUE))
+                .addContainerGap(733, Short.MAX_VALUE))
         );
 
         getContentPane().add(driverMenuPanel, "card7");
@@ -3616,7 +3612,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel120)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addContainerGap(469, Short.MAX_VALUE))
         );
 
         getContentPane().add(GuideMenuPanel, "card8");
@@ -4530,6 +4526,7 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(reservationsPanel).setVisible(true);
         
         jComboBox14.removeAllItems();
+        jComboBox19.removeAllItems();
         try  {
             Connection con = ConnectionToDb.connectMySqlDB();
             
@@ -4555,6 +4552,13 @@ public class Menu extends javax.swing.JFrame {
 
                 String res_tr_id = rs.getString("tr_id");
                 jComboBox14.addItem(res_tr_id);
+                
+            }
+            rs=stmt.executeQuery("select distinct res_isadult from reservation");
+            while(rs.next()){
+
+                String isAdult = rs.getString("res_isadult");
+                jComboBox19.addItem(isAdult);
                 
             }
          
