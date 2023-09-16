@@ -18,7 +18,7 @@ public class ConnectionToDb {
             return DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             return null;
         }
     }

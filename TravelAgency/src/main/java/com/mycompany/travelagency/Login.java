@@ -5,13 +5,8 @@
 package com.mycompany.travelagency;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.Arrays;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import java.awt.Toolkit;
 import java.awt.Dimension;
 import java.sql.CallableStatement;

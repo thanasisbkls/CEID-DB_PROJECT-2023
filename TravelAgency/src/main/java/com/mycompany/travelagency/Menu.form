@@ -257,10 +257,10 @@
       <Color id="Default Cursor"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1250, 820]"/>
+      <Dimension value="[1250, 850]"/>
     </Property>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1250, 820]"/>
+      <Dimension value="[1250, 850]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -2997,28 +2997,23 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Component id="jLabel48" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="jLabel48" min="-2" pref="79" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jTextField28" pref="136" max="32767" attributes="0"/>
+                                      <Component id="jTextField27" max="32767" attributes="0"/>
+                                      <Component id="jTextField26" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jTextField29" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jTextField29" min="-2" pref="124" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jTextField28" pref="136" max="32767" attributes="0"/>
-                                          <Component id="jTextField27" max="32767" attributes="0"/>
-                                          <Component id="jTextField26" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel45" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel46" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel47" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="jLabel49" max="32767" attributes="0"/>
+                                  <Component id="jLabel45" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel46" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel47" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -4532,8 +4527,8 @@
                   <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                   <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane16" min="-2" pref="722" max="-2" attributes="0"/>
-                  <EmptySpace pref="286" max="32767" attributes="0"/>
+                  <Component id="jScrollPane16" min="-2" pref="409" max="-2" attributes="0"/>
+                  <EmptySpace pref="599" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -4549,20 +4544,14 @@
             <Component class="javax.swing.JTable" name="jTable16">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="logid" type="java.lang.String"/>
-                    <Column editable="true" title="logdescr" type="java.lang.String"/>
-                    <Column editable="true" title="log_ID_AT" type="java.lang.String"/>
+                  <Table columnCount="3" rowCount="4">
+                    <Column editable="true" title="Description" type="java.lang.String"/>
+                    <Column editable="true" title="IT&apos;s Last Name" type="java.lang.String"/>
                     <Column editable="true" title="log_date" type="java.lang.String"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>

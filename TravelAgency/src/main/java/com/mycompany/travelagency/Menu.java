@@ -7,19 +7,10 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
 /**
@@ -39,8 +30,7 @@ public class Menu extends javax.swing.JFrame {
             
             //here sonoo is database name, root is username and password
             try  {
-//                Class.forName("com.mysql.jdbc.Driver");
-//                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
+                
                 Connection con = ConnectionToDb.connectMySqlDB();
                 /*Branch*/
                 Statement stmt=con.createStatement();
@@ -55,7 +45,6 @@ public class Menu extends javax.swing.JFrame {
                     String br_city = rs.getString("br_city");
 
                     String tbData[] = {br_code, br_num, br_street, br_city};
-                    //DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
                     
                     tbModel.addRow(tbData);
                 }
@@ -89,7 +78,6 @@ public class Menu extends javax.swing.JFrame {
                     String dst_language = rs.getString("dst_language");
                     String dst_location = String.valueOf(rs.getInt("dst_location") );
                     String tbData[] = {dst_id, dst_name, dst_descr, dst_rtype, dst_language, dst_location};
-                    //DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
                     
                     tbModel.addRow(tbData);
                 }
@@ -172,7 +160,6 @@ public class Menu extends javax.swing.JFrame {
                     String adm_diploma = rs.getString("adm_diploma");
 
                     String tbData[] = {adm_AT, adm_type, adm_diploma};
-                    //DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
                     
                     tbModel.addRow(tbData);
                 }
@@ -252,22 +239,6 @@ public class Menu extends javax.swing.JFrame {
                     tbModel.addRow(tbData);
                 }
                 
-                /*travelTo*/
-//                stmt=con.createStatement();
-//                rs=stmt.executeQuery("select * from travelTo");
-//                tbModel = (DefaultTableModel)jTable2.getModel();
-//                tbModel.setRowCount(0);
-//                while(rs.next()){
-//
-//                    String br_code = String.valueOf(rs.getInt("br_code") );
-//                    String br_num = String.valueOf( rs.getInt("br_num") );
-//                    String br_street = rs.getString("br_street");
-//                    String br_city = rs.getString("br_city");
-//
-//                    String tbData[] = {br_code, br_num, br_street, br_city};
-//                    
-//                    tbModel.addRow(tbData);
-//                }
 
                 /*Offers*/
                 stmt=con.createStatement();
@@ -738,8 +709,8 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(1250, 820));
-        setSize(new java.awt.Dimension(1250, 820));
+        setPreferredSize(new java.awt.Dimension(1250, 850));
+        setSize(new java.awt.Dimension(1250, 850));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -2401,23 +2372,20 @@ public class Menu extends javax.swing.JFrame {
                                     .addGroup(tripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
+                        .addGroup(tripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextField28, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                .addComponent(jTextField27)
+                                .addComponent(jTextField26))
+                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(70, 70, 70)
                         .addGroup(tripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(tripsPanelLayout.createSequentialGroup()
-                                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel49))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tripsPanelLayout.createSequentialGroup()
-                                .addGroup(tripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField28, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                                    .addComponent(jTextField27)
-                                    .addComponent(jTextField26))
-                                .addGap(70, 70, 70)
-                                .addGroup(tripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel45)
+                            .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel47))
                         .addGroup(tripsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tripsPanelLayout.createSequentialGroup()
                                 .addGap(53, 53, 53)
@@ -3119,17 +3087,17 @@ public class Menu extends javax.swing.JFrame {
 
         jTable16.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "logid", "logdescr", "log_ID_AT", "log_date"
+                "Description", "IT's Last Name", "log_date"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -3167,8 +3135,8 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(599, Short.MAX_VALUE))
         );
 
         getContentPane().add(logsMenuPanel, "card5");
@@ -3885,8 +3853,6 @@ public class Menu extends javax.swing.JFrame {
         jComboBox5.removeAllItems();
         
         try  {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
             Connection con = ConnectionToDb.connectMySqlDB();
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from admin");
@@ -3899,30 +3865,22 @@ public class Menu extends javax.swing.JFrame {
                 String adm_diploma = rs.getString("adm_diploma");
 
                 String tbData[] = {adm_AT, adm_type, adm_diploma};
-                //DefaultTableModel tbModel = (DefaultTableModel)jTable2.getModel();
 
                 tbModel.addRow(tbData);
             }
             
             rs=stmt.executeQuery("select distinct wrk_AT from worker");
             while(rs.next()){
-
-                
                 String br_code = rs.getString("wrk_AT");
                 jComboBox4.addItem(br_code);
-
             }
             
             rs=stmt.executeQuery("select distinct adm_type from admin");
             while(rs.next()){
-
-                
                 String admType = rs.getString("adm_type");
                 jComboBox5.addItem(admType);
-
             }
-            
-            
+
             con.close();
         }
         catch(Exception e){ JFrame f=new JFrame();  
@@ -3943,8 +3901,6 @@ public class Menu extends javax.swing.JFrame {
         dataMenuPanel.add(branchesPanel).setVisible(true);
                 
         try  {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
             Connection con = ConnectionToDb.connectMySqlDB();
             Statement stmt=con.createStatement();
             ResultSet rs=stmt.executeQuery("select * from branch");
@@ -3982,8 +3938,6 @@ public class Menu extends javax.swing.JFrame {
             String insertBranchCommand = "INSERT INTO branch VALUES (" + br_code + "," + br_num +  "," + "'"  + br_street + "','" + br_city  + "'); " ;
             
             try  {
-//                Class.forName("com.mysql.jdbc.Driver");
-//                Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/travelagency","root","root");
                 Connection con = ConnectionToDb.connectMySqlDB();
                 Statement stmt=con.createStatement();
                 stmt.executeUpdate(insertBranchCommand);
@@ -4025,14 +3979,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        // TODO add your handling code here:
-        
-        //dataPanel.add(adminsPanel);
+
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        // TODO add your handling code here:
-        //dataPanel.removeAll();
+      
         
     }//GEN-LAST:event_jMenu1MouseClicked
 
@@ -4139,7 +4090,7 @@ public class Menu extends javax.swing.JFrame {
 
             }
             
-            rs=stmt.executeQuery("select distinct drv_license from driver");
+            rs=stmt.executeQuery("select distinct drv_license from driver order by drv_license asc");
             while(rs.next()){
 
                 //String br_code = String.valueOf(rs.getInt("br_code") );
@@ -4645,9 +4596,7 @@ public class Menu extends javax.swing.JFrame {
 
                 String tr_id = String.valueOf(rs.getInt("tr_id") );
                 String tr_departure = String.valueOf(rs.getDate("tr_departure") );
-                String tr_return = String.valueOf( rs.getDate("tr_return") );
-                //String tr_departure = rs.getString("tr_departure");
-                //String tr_return = rs.getString("tr_return");      
+                String tr_return = String.valueOf( rs.getDate("tr_return") );    
                 String tr_maxseats = String.valueOf(rs.getInt("tr_maxseats") );
 
                 String tr_cost = String.valueOf(rs.getFloat("tr_cost") );
@@ -5737,19 +5686,19 @@ public class Menu extends javax.swing.JFrame {
         
         try  {
             Connection con = ConnectionToDb.connectMySqlDB();
+            String showLogProc = "call showLog();";
             
-            Statement stmt=con.createStatement();
-            ResultSet rs=stmt.executeQuery("select * from log");
+            CallableStatement stmt = con.prepareCall(showLogProc);
+            ResultSet rs = stmt.executeQuery();
             DefaultTableModel tbModel = (DefaultTableModel)jTable16.getModel();
             tbModel.setRowCount(0);
             while(rs.next()){
 
-                String logid = rs.getString("logid");
-                String logdescrc = rs.getString("logdescrc");
-                String log_ID_AT = rs.getString("log_ID_AT");
-                String log_date = rs.getString("log_date");
-
-                String tbData[] = {logid , logdescrc , log_ID_AT , log_date };
+                String descr = rs.getString("log_desc");
+                String itLname = rs.getString("it_lastname");
+                String date = rs.getString("log_date");
+               
+                String tbData[] = {descr , itLname , date};
                 
                 tbModel.addRow(tbData);
             }
@@ -7151,7 +7100,6 @@ public class Menu extends javax.swing.JFrame {
                                 
                 while(rs.next()){
                     
-                    //String br_code = String.valueOf(rs.getInt("br_code") );
                     String br_code = rs.getString("br_code");
                     jComboBox28.addItem(br_code);
                     

@@ -12,7 +12,6 @@ public class TravelAgency {
 
     public static void main(String[] args) {
         Login app = new Login();
-        app.show();
         app.setVisible(true);
     }
 }
