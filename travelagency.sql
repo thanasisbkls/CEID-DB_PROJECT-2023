@@ -11,6 +11,7 @@ create table if not exists branch(
 	primary key(br_code)
 );
 
+
 create table if not exists phones(
     ph_br_code int(11) not null,
     ph_number char(10) default 'unknown' not null,
@@ -77,6 +78,7 @@ create table if not exists admin(
 	constraint workerAdminAt foreign key (adm_AT) references worker(wrk_AT)
 	ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 
 create table if not exists manages(
     mng_adm_AT char(10) default 'unkown' not null,
@@ -351,7 +353,7 @@ INSERT INTO languages VALUES
 ('AT000007', 'Portuguese'),
 ('AT000008', 'Italian'),
 ('AT000009', 'Greek'),
-('AT0000010', 'French');
+('AT000010', 'French');
 
 INSERT INTO driver VALUES
 ('AT000011', 'B', 'LOCAL', 5),
@@ -640,8 +642,6 @@ begin
 
             select tripCost, maxSeats, reservCount, emptySeats, drivLname,
                 drivName, GuideLname, GuideName, departureDate, returnDate;
-        else
-            select null; #why?
         end if;
     until (not_found=1)
     end repeat;
@@ -677,14 +677,14 @@ BEGIN
 
         -- Cannot be deleted
         IF @is_administrative > 0 THEN
-        SELECT concat(first_name, ' ', last_name, 'with AT:', @AT, ' is an administrator of a branch and cannot be deleted.') AS result;
-
+            signal sqlstate value '45000'
+            set message_text = 'Cannot delete administrator of a branch';
         -- Else delete
         ELSE
             DELETE admin FROM admin
             INNER JOIN worker ON admin.adm_AT = worker.wrk_AT
             WHERE worker.wrk_name = first_name AND worker.wrk_lame = last_name;
-            select concat(first_name, ' ', last_name, ' ', 'with AT: ', @AT, 'deleted successfully');
+            select concat(first_name, ' ', last_name, ' ', 'with AT: ', @AT, ' deleted successfully');
             #select 'not null';
         END IF;
 
@@ -789,7 +789,7 @@ begin
     select tempID into testvalue from templogin;
     if(testvalue is not null) then
         insert into log
-        set logdescrc = 'Deleted a trip.',log_ID_AT=@loginID,log_date=now();
+        set logdescrc = 'Deleted a trip.',log_ID_AT=testvalue,log_date=now();
     else
         signal sqlstate value '45000'
         set message_text = 'Error!You have to login as It Officer.';
@@ -1131,8 +1131,8 @@ END$
 
 delimiter ;
 
+
 drop procedure if exists addIT;
-call addIT('AT111111', 'TestIt', 'TestIt', 3020, 1, 1234, '2023-01-01', null);
 delimiter $
 CREATE PROCEDURE addIT(in wrkAT char(10), in wrkName varchar(20), in wrkLname varchar(20), in wrkSalary float(7, 2),in
     wrkBrCode int, in password char(10), in startD datetime, in endD datetime)
@@ -1198,3 +1198,116 @@ BEGIN
 END;
 
 delimiter ;
+
+
+-- Extra functionalities
+drop procedure if exists branch_stats;
+
+delimiter $
+CREATE PROCEDURE branch_stats(brCode INT)
+BEGIN
+    declare not_found int;
+    declare temp_tr_id int;
+    declare temp_cost float(7, 2);
+    declare total_cost float(7, 2);
+    declare total_salaries float(13, 2);
+
+    -- total income from the reservations
+    declare trip_cost_cursor cursor for
+    select tr_cost, tr_id
+    from trip
+    where tr_br_code = brCode;
+
+    declare continue handler for not found set not_found=1;
+
+    set not_found=0;
+    set total_cost=0.0;
+    open trip_cost_cursor;
+
+    repeat
+        fetch trip_cost_cursor INTO temp_cost, temp_tr_id;
+        if(not_found=0) then
+            select count(res_tr_id) * temp_cost
+            from reservation
+            where res_tr_id = temp_tr_id INTO temp_cost;
+
+            set total_cost = total_cost + temp_cost;
+        end if ;
+        until (not_found=1)
+    end repeat ;
+    close trip_cost_cursor;
+
+    -- expenses = salaries
+    SELECT SUM(wrk_salary)
+    FROM worker
+    WHERE wrk_br_code = brCode INTO total_salaries;
+
+
+    select total_cost AS 'Income', total_salaries AS 'expenses', total_cost - total_salaries AS 'Turnover';
+
+END $
+
+
+drop procedure if exists driver_card;
+
+delimiter $
+CREATE PROCEDURE driver_card(id char(10))
+BEGIN
+   -- id
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", wrk_AT AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+        "Salary", drv_license AS "License", drv_route AS "Route", drv_experience AS "Experience"
+    from worker
+    inner join driver on drv_AT = worker.wrk_AT
+    where wrk_AT = id;
+
+   -- assigned trips
+    select tr_id AS "Trip Id", tr_departure AS "departure", tr_return AS "Return"
+    from trip
+    where tr_drv_AT = id;
+
+END $
+
+
+drop procedure if exists guide_card;
+
+delimiter $
+CREATE PROCEDURE guide_card(id char(10))
+BEGIN
+   -- id
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", wrk_AT AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+        "Salary"
+    from worker
+    inner join guide on guide.gui_AT = worker.wrk_AT
+    where wrk_AT = id;
+
+    -- languages
+    select lng_language
+    from languages
+    where lng_gui_AT = id;
+
+    -- assigned trips
+    select tr_id AS "Trip Id", tr_departure AS "departure", tr_return AS "Return"
+    from trip
+    where tr_gui_AT = id;
+
+   -- guide cv
+    select gui_cv AS "CV"
+    from guide
+    where gui_AT = id;
+
+END $
+
+drop procedure if exists admin_card;
+delimiter $
+CREATE PROCEDURE admin_card(id char(10))
+BEGIN
+   -- id
+    select wrk_name AS "First Name", wrk_lame AS "Last Name", wrk_AT AS "AT", wrk_br_code AS 'Branch Code', wrk_salary AS
+        "Salary", adm_type AS "Type", adm_diploma AS 'Diploma'
+    from worker
+    inner join admin on adm_AT = wrk_AT
+    where wrk_AT = id;
+
+
+END $
+
