@@ -585,19 +585,57 @@ DELIMITER $
 CREATE PROCEDURE newDriverAssignment(drvAT char(10), drvName varchar(20), drvLname varchar(30),
  drvSalary float(7,2), drvLicense enum('A', 'B', 'C', 'D'), drvRoute enum('LOCAL', 'ABROAD'), drvExperience tinyint(4))
 BEGIN
-    declare BRANCH_CODE int;
+    declare branch_code int;
+    declare branch_index int;
+    declare drivers_count int;
+    declare min_drivers_count int;
+    declare not_found int;
+    declare flag int;
 
-    select br_code into BRANCH_CODE
-    from branch
-    inner join worker on branch.br_code = worker.wrk_br_code
-    inner join driver on worker.wrk_AT = driver.drv_AT
-    group by br_code
-    order by count(drv_AT) asc limit 1;
+    declare tcursor cursor for
+    select br_code
+    from branch;
 
-    insert into worker values(drvAT, drvName, drvLname, drvSalary, BRANCH_CODE);
+    declare continue handler for not found set not_found=1;
+
+    set not_found=0;
+    open tcursor;
+
+    set flag = 1;
+
+    repeat
+        fetch tcursor into branch_code;
+        if(not_found=0) then
+            select count(drv_AT) into drivers_count
+            from branch
+            inner join worker on branch.br_code = worker.wrk_br_code
+            inner join driver on worker.wrk_AT = driver.drv_AT
+            where br_code = branch_code;
+
+            if flag = 1 then
+                set min_drivers_count = drivers_count;
+                set flag = 0;
+            end if ;
+
+            if drivers_count < min_drivers_count then
+                set min_drivers_count = drivers_count;
+                set branch_index = branch_code;
+            end if ;
+        end if;
+    until(not_found=1)
+    end repeat;
+
+    close tcursor;
+
+    insert into worker values(drvAT, drvName, drvLname, drvSalary, branch_index);
     insert into driver values(drvAT, drvLicense, drvRoute, drvExperience);
 
-END$
+end $
+
+
+
+
+
 
 delimiter ;
 

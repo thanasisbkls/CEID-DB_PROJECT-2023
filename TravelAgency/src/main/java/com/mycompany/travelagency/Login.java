@@ -12,6 +12,7 @@ import java.awt.Dimension;
 import java.sql.CallableStatement;
 import java.sql.SQLException;
 import java.sql.Types;
+import java.awt.event.*;
 /**
  *
  * @author Baknis
@@ -30,6 +31,40 @@ public class Login extends javax.swing.JFrame {
         
     }
     
+    private void logIn(){
+    try  {
+            //Establish connection to the database
+            Connection con = ConnectionToDb.connectMySqlDB();
+            CallableStatement cStmt = con.prepareCall("{call getItID(?, ?, ?)}");
+            cStmt.setString(1, jTextField1.getText());
+            char[] pass = jPasswordField1.getPassword();
+            String password = new String(pass);
+            cStmt.setString(2, password);
+            cStmt.registerOutParameter(3, Types.VARCHAR);
+            cStmt.execute();
+            
+            String loginResult = cStmt.getString(3);
+            //Check if itOfficer or not and proceed accordingly
+            if (loginResult != null){
+            // edw kanei switch to panel
+                Menu m = new Menu();
+                m.setTitle("IT: " + loginResult);
+                m.setVisible(true);
+                dispose();
+            }else {
+                //edw petaei error message kai stamataei
+                JFrame f;
+                f=new JFrame();
+                JOptionPane.showMessageDialog(f, "Incorrect username or password!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            //Close connection
+            con.close();
+        
+        }catch (SQLException a){
+            System.out.print(a);
+        }       
+    }
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,6 +83,11 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Travel Agency Login");
@@ -67,6 +107,11 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
             }
         });
 
@@ -129,43 +174,26 @@ public class Login extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        try  {
-            //Establish connection to the database
-            Connection con = ConnectionToDb.connectMySqlDB();
-            CallableStatement cStmt = con.prepareCall("{call getItID(?, ?, ?)}");
-            cStmt.setString(1, jTextField1.getText());
-            char[] pass = jPasswordField1.getPassword();
-            String password = new String(pass);
-            cStmt.setString(2, password);
-            cStmt.registerOutParameter(3, Types.VARCHAR);
-            cStmt.execute();
-            
-            String loginResult = cStmt.getString(3);
-            //Check if itOfficer or not and proceed accordingly
-            if (loginResult != null){
-            // edw kanei switch to panel
-                Menu m = new Menu();
-                m.setTitle("IT: " + loginResult);
-                m.setVisible(true);
-                dispose();
-            }else {
-                //edw petaei error message kai stamataei
-                JFrame f;
-                f=new JFrame();
-                JOptionPane.showMessageDialog(f, "Incorrect username or password!", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            //Close connection
-            con.close();
-        
-        }catch (SQLException a){
-            System.out.print(a);
-        }       
+        logIn();
     }//GEN-LAST:event_jButton1ActionPerformed
     
     
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+    
+    }//GEN-LAST:event_formKeyPressed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        // TODO add your handling code here:
+         // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            {
+                 logIn();
+            }
+    }//GEN-LAST:event_jPasswordField1KeyPressed
 
     /**
      * @param args the command line arguments
